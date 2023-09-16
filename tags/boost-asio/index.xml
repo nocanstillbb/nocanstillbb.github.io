@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Boost Asio on hbb&#39;s blog</title>
+    <link>/tags/boost-asio/</link>
+    <description>Recent content in Boost Asio on hbb&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 24 Mar 2024 12:48:29 +0800</lastBuildDate><atom:link href="/tags/boost-asio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>boost-asio-udp-同步超时陷阱</title>
+      <link>/post/boost-asio-udp-%E5%90%8C%E6%AD%A5%E8%B6%85%E6%97%B6%E9%99%B7%E9%98%B1/</link>
+      <pubDate>Sun, 24 Mar 2024 12:48:29 +0800</pubDate>
+      
+      <guid>/post/boost-asio-udp-%E5%90%8C%E6%AD%A5%E8%B6%85%E6%97%B6%E9%99%B7%E9%98%B1/</guid>
+      <description>2024/03/24 阴， 约了许久没见面的妹妹吃了一个饭，她去找他同学玩了，我到咖啡店找点下周要开发的nvidia jetson xavier的资料， 由于板子没在身边，具体型号也不记得，所以有时间记录一下去年遇到的一个boost asio 同步通讯中，客户端设置超时的坑， 顺便记录一下boost udp 客户端 通讯的example， 同步，异步应该是大同小异， 我使用的boost 版本是1.83
+0. boost udp 同步超时陷阱 遇到这个问题时，我在开发一个gige 协议的客户端，用于windows和linux环境，使用gige相机。gige中通过gvcp和gvsp来对相机进行交互和取流，gvcp是udp协议，所以我用的是udp socket。开始时，我在windows上开发， 使用下面这段代码设置超时时间 ，它可以正常的工作 ，当超时发生时，返回超时的结果。
+代码中先创建了endpoint和udp socket，然后把它们绑定在一起，然后设置socket的超时时间 为5000毫秒
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 void foo() { try { boost::asio::io_service io_service; boost::asio::ip::udp::socket socket(io_service); socket.</description>
+    </item>
+    
+  </channel>
+</rss>

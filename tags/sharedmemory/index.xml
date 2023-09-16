@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SharedMemory on hbb&#39;s blog</title>
+    <link>/tags/sharedmemory/</link>
+    <description>Recent content in SharedMemory on hbb&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 04 Apr 2024 12:00:00 +0800</lastBuildDate><atom:link href="/tags/sharedmemory/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>cpp跨平台共享内存进程通讯</title>
+      <link>/post/cpp%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98%E8%BF%9B%E7%A8%8B%E9%80%9A%E8%AE%AF/</link>
+      <pubDate>Thu, 04 Apr 2024 12:00:00 +0800</pubDate>
+      
+      <guid>/post/cpp%E8%B7%A8%E5%B9%B3%E5%8F%B0%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98%E8%BF%9B%E7%A8%8B%E9%80%9A%E8%AE%AF/</guid>
+      <description>1. Linux的两种共享内存机制，及选用 shmget 和 shm_open 是两种不同的共享内存机制，它们在使用方式和本质上有所不同。
+1.1 System V 共享内存 shmget 是 POSIX 标准中定义的 System V 共享内存的接口函数。 System V 共享内存是一种传统的 UNIX 共享内存机制，使用 shmget 函数创建的共享内存对象被映射到进程的地址空间中，进程可以直接访问共享内存区域，而无需通过文件系统。 System V 共享内存需要使用键值来唯一标识共享内存对象，进程可以使用该键值来获取或创建共享内存对象。 System V 共享内存需要使用额外的信号量进行同步和互斥操作，以避免竞争条件和数据损坏。 1.2 映射文件共享内存 shm_open 是 POSIX 标准中定义的另一种共享内存机制，属于 POSIX 共享内存对象。 POSIX 共享内存是一种基于文件的共享内存机制，使用 shm_open 函数创建的共享内存对象实际上对应着文件系统中的一个特殊文件。 与 System V 共享内存不同，POSIX 共享内存可以直接通过文件系统访问和管理，进程可以像操作普通文件一样来操作共享内存对象。 POSIX 共享内存不需要使用键值来标识共享内存对象，而是使用文件路径来唯一标识共享内存对象，这样更加简洁和直观。 POSIX 共享内存不需要使用额外的信号量进行同步和互斥操作，而是通过操作系统提供的文件锁机制来实现并发访问的同步。 由于要考虑跨平台封装，windows上共享内存映射也是文件系统相关，所以选择映射文件的这个套机制
+2. 查看共享内存分配情况 2.1 POSIX - System V 虽然我们选用了映射文件共享内存的方式，但是还是简单提一下system v共享内存机制查看已分配内存的方式
+1 2 3 4 5 6 7 8 9 huangbinbin@cs-bj:~$ ipcs -m ------ Shared Memory Segments -------- key shmid owner perms bytes nattch status 0x00000000 557056 chenyan 600 524288 2 dest 0x00000000 557057 chenyan 600 2097152 2 dest 0x00000000 491523 hanhaopeng 600 8388608 2 dest 0x00000000 1146884 huangbinbi 600 67108864 2 dest .</description>
+    </item>
+    
+  </channel>
+</rss>
