@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Radxa on hbb&#39;s blog</title>
+    <link>/tags/radxa/</link>
+    <description>Recent content in Radxa on hbb&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 27 Jul 2024 12:48:29 +0800</lastBuildDate><atom:link href="/tags/radxa/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>radxa-rock5c-开发笔记</title>
+      <link>/post/radxa-rock5c-%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sat, 27 Jul 2024 12:48:29 +0800</pubDate>
+      
+      <guid>/post/radxa-rock5c-%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/</guid>
+      <description>1. 从NVME 启动系统 从官方的文档上看rock5c, 你会有一种看山跑死马的感觉, 因为它在一本正经的胡说八道
+怀疑它只是把rock 5b或5a的文档复制过来改一一改
+按他们文档上刷nvme的文档,你将永远不可能成功, 因为rock 5c 从emmc或nvme启动,只能二选一
+因为pin脚不够用.但是他们文档上没有指出这点, 截止2024-07-27
+如果不想买额外的模块,又想从nvme启动系统,唯的一选项是 把系统刷到 sd中,
+这里sd卡中有三个分区
+bootloader 硬件配置分区 操作系统分区 然后把sd卡的 第二个分区和第三个分区格式化后,这样当sd卡中的bootloader找不到系统,会尝试从pcie启动
+前提是系统已经识别到nvme设备
+1 $lsblk #查看是否有nvme设备 格式化可以把sd加载到linux,使用fdisk
+1 2 3 4 5 6 $lsblk #查看是否正常识别sd卡设备 $fdisk /dev/sdc #进入交互式cli d 2 #删除第二分区 d 3 #删除第三分区 w #保存 q #退出 然后把官网下载的镜像烧录到m2, 接入rock5c
+启动后应该可以看到系统挂载在nvme
+1 df -h 可以买容量比较小的sd卡, 10元以内的, 烧录系统失败也没关系,因第一个分区应该还是成功的,失败了应该不影响使用sd卡作为bootload
+这样比较经济实惠
+2. 开机不自动WIFI 关闭 钱包服务
+kwalletmanager中禁用掉
+把wireless网络删除，重新创建 无线连接
+设置固定ip地址 为wifi生成一个随机的mac (radxa估计没有买mac地址,所以没有mac地址导致dhcp服务器不会缓存,每次重新开机都是新的ip,真是满满的惊喜)
+需要在/config/config.txt中设置</description>
+    </item>
+    
+  </channel>
+</rss>
