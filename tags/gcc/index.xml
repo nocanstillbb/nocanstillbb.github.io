@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GCC on hbb&#39;s blog</title>
+    <link>/tags/gcc/</link>
+    <description>Recent content in GCC on hbb&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 07 Feb 2024 00:00:00 +0800</lastBuildDate><atom:link href="/tags/gcc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ubuntu安装多个gcc版本</title>
+      <link>/post/ubuntu%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AAgcc%E7%89%88%E6%9C%AC/</link>
+      <pubDate>Wed, 07 Feb 2024 00:00:00 +0800</pubDate>
+      
+      <guid>/post/ubuntu%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AAgcc%E7%89%88%E6%9C%AC/</guid>
+      <description>ubuntu 16.04 安装多个gcc版本 1.背景 由于我们软件开发时，通常在ubuntu16.04系统中运行，而ubuntu16.04 中系统自带的gcc版本为5.4.
+ubuntu16.04 从2016年发布以来，就实验性的支持了c++17的部分功能，所以我们的工程中也部分的使用了c++17的功能。
+最近，在windows上使用msvc写了一部分代码，在与linux版本合并的时候，出现很多编译错误，才来了解gcc对c++17的支持情况
+gcc 5，部分的，实验性的支持了c++17的语法
+gcc 7, 在语法层面，完整的兼容了c++17标准
+gcc 9, c++17 ABI层面完整的兼容(意味着可以安全的交叉编译)
+信息来源
+考虑到ubuntu16已经于2021年结束标准支持，2026年将结束生命周期，以及使用更多的c++17的特性
+我决定在我的开发环境安装多个gcc版本，踩一下升级gcc坑，
+先设定一个小目标：安装可以在gcc 5 和gcc7之间来回切换的开发环境
+2.升级之前 备份虚拟机环境 ，基操
+3. 升级 我们主要通过build-essential 这个基础设施来 安装，管理 gcc ， 所以首先安装它
+1 sudo apt install build-essential 下面三个镜像任选一个
+1 2 3 4 5 6 #清华 sudo sed -i &amp;#39;s/http:\/\/archive.ubuntu.com\/ubuntu\//http:\/\/mirrors.tuna.tsinghua.edu.cn\/ubuntu\//g&amp;#39; /etc/apt/sources.list #阿里云 sudo sed -i &amp;#39;s/http:\/\/archive.ubuntu.com\/ubuntu\//http:\/\/mirrors.aliyun.com\/ubuntu\//g&amp;#39; /etc/apt/sources.list #华为云 sudo sed -i &amp;#39;s/http:\/\/archive.ubuntu.com\/ubuntu\//https:\/\/mirrors.huaweicloud.com\/ubuntu\//g&amp;#39; /etc/apt/sources.list 安装gcc版本
+1 sudo apt -y install gcc-5 g++-5 gcc-7 g++-7 1 2 3 4 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 5 sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 5 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 7 sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 7 配置gcc版本</description>
+    </item>
+    
+  </channel>
+</rss>
