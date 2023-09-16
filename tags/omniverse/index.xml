@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Omniverse on hbb&#39;s blog</title>
+    <link>/tags/omniverse/</link>
+    <description>Recent content in Omniverse on hbb&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 20 Dec 2025 12:51:56 +0800</lastBuildDate><atom:link href="/tags/omniverse/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在nvidia_omniverse_app中加载c&#43;&#43;_qt_qml插件</title>
+      <link>/post/%E5%9C%A8nvidia_omniverse_app%E4%B8%AD%E5%8A%A0%E8%BD%BDc-_qt_qml%E6%8F%92%E4%BB%B6/</link>
+      <pubDate>Sat, 20 Dec 2025 12:51:56 +0800</pubDate>
+      
+      <guid>/post/%E5%9C%A8nvidia_omniverse_app%E4%B8%AD%E5%8A%A0%E8%BD%BDc-_qt_qml%E6%8F%92%E4%BB%B6/</guid>
+      <description>接上文 好久没写博客了, 5月份-11月份一直在研究react native , ts和cpp hybrid的mvvm
+从一开始的app单个工程,到后面的npm模块化, 在11月份勉强画上句号
+国庆前经恒星和银狼介绍,投了他们仿真团伙UI岗位,原计划qt6 + vulkan写一个仿真软件.
+(感谢他们,新的工作环境比以前好得多, 新的工作也是每天在探索无人区,充满新鲜感
+​ 希望新的公司可以干趴其他竞争对手,也希望自己可以在新的行业有所成长
+入职前狠狠的研究了一把qt6 + vulkan
+封装了vulkan 的qml控件;把我的prism for qt mvvm框架从qt5切到qt6 修复了热重载 / native无边框窗口
+不过计划总是赶不上变化,入职后变成基于nvidia omniverse的二开了
+就像在岸上走的人突然掉入水中, 第一件事就是努力爬到岸上去
+所以我当时也试图把qt搬到omniverse app 的python世界里, 随着目标越来越清晰, qt方案已经放弃了
+但是那段时间积累了一些经验, 还是觉得需要记录一下 ,防止未来还会遇到在python中调用qt c++ plugin 的场景
+创建qt qml c++ plugin 本文不介绍如何封装自定义接口的qt 插件,
+简而言之就是定义一个接口, 然后在动态库中定义,实现继承接口的类 , 在app中实例化类以调用
+安装qt和pyside版本 从license 方面来看 pyqt的开源协议为具有左传染的GPL, pyside 是LGPL, pyside胜
+从兼容方面来看, pyqt的qobject 和c++ qt 的qobject不兼容, pyside 则是兼容的, 还是pyside胜
+所以选择pyside
+我安装的qt 6是 6.</description>
+    </item>
+    
+  </channel>
+</rss>
