@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Translator on hbb&#39;s blog</title>
+    <link>/tags/translator/</link>
+    <description>Recent content in Translator on hbb&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 09 Dec 2023 17:51:56 +0800</lastBuildDate><atom:link href="/tags/translator/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>qt5-cmake-qml多语言实践</title>
+      <link>/post/qt5-cmake-qml%E5%A4%9A%E8%AF%AD%E8%A8%80%E5%AE%9E%E8%B7%B5/</link>
+      <pubDate>Sat, 09 Dec 2023 17:51:56 +0800</pubDate>
+      
+      <guid>/post/qt5-cmake-qml%E5%A4%9A%E8%AF%AD%E8%A8%80%E5%AE%9E%E8%B7%B5/</guid>
+      <description>1. 编码 1.1 CMake # 添加引用Qt的名为LinguistTools的component find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core LinguistTools) find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Gui Widgets Quick Qml QuickControls2 LinguistTools) #定义需要生成的.ts ,放到TS_FILES这个cmake变量中 set(TS_FILES src/translations/zh_CN.ts src/translations/en_US.ts src/translations/ja_JP.ts ) #扫描这dv_app,dv_camera, dv_common这三个目录，把需要翻译的字符串扫描进.ts文件中 qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR}/dv_app ${CMAKE_SOURCE_DIR}/dv_camera ${CMAKE_SOURCE_DIR}/dv_common ${TS_FILES} ) #在生成 xxx可执行文件时，把执行扫描生成.ts ，再把.ts生成.qm翻译二进制文件 add_library(xxx SHARED ${TS_FILES} #这一行只是为了在qt creator中看到.ts文件 ${QM_FILES} ) #复制翻译文件.qm到 生成目录的translations文件夹 add_custom_command(TARGET xxx POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy ${QM_FILES} $&amp;lt;TARGET_FILE_DIR:dv_common&amp;gt;/translations ) 1.2. c++ 1.2.1 简单封装加载qm翻译文件的逻辑 bool cpp_utility::load_language_qm(QString filePath) { try { std::shared_ptr&amp;lt;QTranslator&amp;gt; translator = prism::Container::get()-&amp;gt;resolve_object&amp;lt;QTranslator&amp;gt;(); if(!</description>
+    </item>
+    
+  </channel>
+</rss>

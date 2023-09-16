@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CMake on hbb&#39;s blog</title>
+    <link>/tags/cmake/</link>
+    <description>Recent content in CMake on hbb&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 09 Dec 2023 17:51:56 +0800</lastBuildDate><atom:link href="/tags/cmake/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>qt5-cmake-qml多语言实践</title>
+      <link>/post/qt5-cmake-qml%E5%A4%9A%E8%AF%AD%E8%A8%80%E5%AE%9E%E8%B7%B5/</link>
+      <pubDate>Sat, 09 Dec 2023 17:51:56 +0800</pubDate>
+      
+      <guid>/post/qt5-cmake-qml%E5%A4%9A%E8%AF%AD%E8%A8%80%E5%AE%9E%E8%B7%B5/</guid>
+      <description>1. 编码 1.1 CMake # 添加引用Qt的名为LinguistTools的component find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core LinguistTools) find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Gui Widgets Quick Qml QuickControls2 LinguistTools) #定义需要生成的.ts ,放到TS_FILES这个cmake变量中 set(TS_FILES src/translations/zh_CN.ts src/translations/en_US.ts src/translations/ja_JP.ts ) #扫描这dv_app,dv_camera, dv_common这三个目录，把需要翻译的字符串扫描进.ts文件中 qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR}/dv_app ${CMAKE_SOURCE_DIR}/dv_camera ${CMAKE_SOURCE_DIR}/dv_common ${TS_FILES} ) #在生成 xxx可执行文件时，把执行扫描生成.ts ，再把.ts生成.qm翻译二进制文件 add_library(xxx SHARED ${TS_FILES} #这一行只是为了在qt creator中看到.ts文件 ${QM_FILES} ) #复制翻译文件.qm到 生成目录的translations文件夹 add_custom_command(TARGET xxx POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy ${QM_FILES} $&amp;lt;TARGET_FILE_DIR:dv_common&amp;gt;/translations ) 1.2. c++ 1.2.1 简单封装加载qm翻译文件的逻辑 bool cpp_utility::load_language_qm(QString filePath) { try { std::shared_ptr&amp;lt;QTranslator&amp;gt; translator = prism::Container::get()-&amp;gt;resolve_object&amp;lt;QTranslator&amp;gt;(); if(!</description>
+    </item>
+    
+    <item>
+      <title>创建vcpkg私有仓库</title>
+      <link>/post/%E5%88%9B%E5%BB%BAvcpkg%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93/</link>
+      <pubDate>Fri, 06 Oct 2023 18:48:29 +0800</pubDate>
+      
+      <guid>/post/%E5%88%9B%E5%BB%BAvcpkg%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93/</guid>
+      <description>0.前言 ​ 最近在做公司一个新的工程，对标海康的MVS, 基于GENICAM通用协议，目标是适配市场上众多的厂牌的基于GENICAM协议的相机。 由于预计到会引用很多开源项目，且会围绕相机扩展很多公司的业务功能。所以我重新设计了新软件总体的架构，由原来的qmake改为cmake，并使用插件式开发。这即方便于引用其他开源框架，也可以使公司的代码模块化，更容易维护以及复用。但在众多开源模块与公司的模块，以及公司的不同的项目之间要如何处理依赖关系？如何科学的减少重复的工作？满地都是cmake + git submodule，我抬头却看到了vcpkg私有仓库。
+1.随便聊聊 1.1 包管理器 ​ python有pip， c#有nuget ， java有maven， 基本上每一个语言都有一个亲妈背书的包管理器，可以递归解决项目依赖，但是c++没有。
+语言特性太复杂， 编译选项不一样，同样的代码生成的程序就可能不能一起工作 模块元编程只能以源码方式发布，而不是二进制 ABI兼容性问题导致需要根据cpu架构发布不同的二进制文件版本 ​ 基于上面的问题以及等等，导致c++的包管理不好实现，长久以来，c++开发者如果需要采用其他开源项目，通常需要手动把 其他c++项目的源码，静态链接库，动态链接库集成到自己的项目里，在集成的过程中，往往不是顺利的，可能需要处理依赖关系，环境问题，编译选项问题。
+1.2 Cmake cmake的出现简化了这个过程， 它是一款跨平台c++项目的管工具， 可以很方便的把cmake工程集成到另一个cmake工程中，然后指定生成器，生成各种类型的构建工具的项目，如ninja,visual studio 等，，并且它可以枚举项目的依赖项目，但是它没有版本控制的能力，所以通常与git联合使用 。 目前基本主流的IDE都集成了cmake和git，并且c++开源项目大多数也是以cmake的方式组织工程，因此使用cmake+git可以方便的集成开源项目。这也是我想用cmake的原因之一，除此之外，只要项目没有相互依赖，不管所处何目录结点，cmake都支持并行构建（qmkae子目录构建完才会构建父目录），可以更好的利用多核计算机的性能。所以cmake已经足够好了，为什么还需要vcpkg?
+​ 想像一下，你有一个巨大的项目，依赖关系比较复杂，如果说顶层项目是第0层，某个第1层的项目A依赖了开源库D，另一个第1层的项目B的第2层项目BA也依赖了项目D， 你如果不修改优化工程结构，你的项目目录里将存在两份D的源码，并且如果修改了其中一份D的代码，需要把它提交给他的父项目们，直到第0层，然后再到另一份D代码处，拉代码后，再一层一层的提交到第0层。这样别人拉取你的第0层代码时，才能简单的git submodule update --init --recursive，克隆下来。而项目中可能会出现多个D项目这样的存在，这意味着即使使用git submodule，也需要做很多重复工作 。 而vcpkg可以解决这种问题,甚至允许控制每份D的代码版本不一样。
+1.3 vcpkg ​ vcpkg是微软推出的c++ 源码级别的跨平台包管理器。虽然vc开头，但不仅限于visual c++， 它基本上=git + cmake,但扩展了包管理器应该有的功能，可以方便的解决项目依赖问题，也可以方便切换依赖项目的ABI，Cpu架构，目标平台。 vcpkg有经典模式和清单模式两种模式。
+经典模式
+允许安装D到系的某个目录，然后所有层级的项目都引用这个 D目录里的cmake module.
+清单模式
+允许在每个层级cmakelist.txt旁边创建一个vcpkg.json配置文件，把需要的包配置在里面，然后执行 vcpkg install --recursive 递归安装依赖包。
+可以看出 清单模式可以解决我在1.2第二段落中描述的问题。但拿来就用还是有一些局限性。以下两种情况
+需要针对性修改某个项目中某个vcpkg安装的开源库依赖，编译选项或bugfix，但其不希望他项目被影响 希望把公司的项目需要集成到vcpkg，享受包管理器带来的便利，又不想开源 何以解忧，唯有搭建自己的vcpkg 仓库，这也是本文档想讲的内容(终于酝酿好氛围)
+​ 除此这外，vcpkg相对于公司现在的项目管理，还有一个优点，就是减少二进制文件的提交，理论上只提交源码就行，install的时候，vcpkg会根据配置 使用git签出正确分支的源码，构建为本地的二进制文件</description>
+    </item>
+    
+  </channel>
+</rss>

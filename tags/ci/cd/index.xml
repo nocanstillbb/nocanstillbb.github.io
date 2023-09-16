@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CI/CD on hbb&#39;s blog</title>
+    <link>/tags/ci/cd/</link>
+    <description>Recent content in CI/CD on hbb&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language><atom:link href="/tags/ci/cd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>为drone制作qt编译打包的ubuntu环境的docker镜像</title>
+      <link>/post/%E4%B8%BAdrone%E5%88%B6%E4%BD%9Cqt%E7%BC%96%E8%AF%91%E6%89%93%E5%8C%85%E7%9A%84ubuntu%E7%8E%AF%E5%A2%83%E7%9A%84docker%E9%95%9C%E5%83%8F/</link>
+      <pubDate>Wed, 27 Sep 2023 18:48:29 +0800</pubDate>
+      
+      <guid>/post/%E4%B8%BAdrone%E5%88%B6%E4%BD%9Cqt%E7%BC%96%E8%AF%91%E6%89%93%E5%8C%85%E7%9A%84ubuntu%E7%8E%AF%E5%A2%83%E7%9A%84docker%E9%95%9C%E5%83%8F/</guid>
+      <description>0.前言 之前我已经写了 Drone+Forgejo+SonarQube 持续集成code review的文档，
+但在之前的文档中，我们并没有自己动手创建docker，都是用别人做好的镜像。
+现在我们需要把开发环境打到docker镜像中，并且把我们的代码库拉到镜像中，做一个基线 ，
+每次Forgejo上触发一个webhook时，我们上Drone基于这个基线，执行指令递归拉取所有git submodule，执行打包脚本。
+1 三种思路 摆在我们面前有三种选择
+编写dockerfile ，从dockerfile生成镜像
+直接运行容器，在容器中安装好所有依赖后，把容器实例转换为镜像
+用现有的系统直接打成docker镜像
+前者的好处是，文件系统分层情况良好，当你有很多镜像时，他们可能可以复用某一些文件层，节约空间和网络流量
+不好的地方就是步骤比较繁琐。后者的好处就是操作简单，但基础镜像的分层信息会丢失。
+因为我们除了Drone构建打包用docker，基本上没其他事了，ubuntu16裸机的这个分层，复用率不高，另外我们只在ci cd的这台电脑上加载这个镜像，没有什么docker集群，所以也不用担心网络流量的问题。所以综合考虑，我们可以考虑使用第二种方式或第三种方式， 由于我硬盘剩余空间比较小，故采用第二种方式
+1 安装docker 由于闫工给我的机器是ubuntu，所以我用apt安装 docker，略
+2.制作开发环境docker 2.1 docker镜像 拉取，启动 拉一个下载量最多的
+root@drone-ci-8-20:~# docker pull homebrew/ubuntu16.04 这时查看电脑上的镜像可以看到已经拉取的
+root@drone-ci-8-20:~# docker images REPOSITORY TAG IMAGE ID CREATED SIZE homebrew/ubuntu16.04 latest 6347afdf9148 6 months ago 1.27GB 实例化容器
+root@drone-ci-8-20:~# docker run -d homebrew/ubuntu16.04 tail -f /dev/null ed1c0b7568119b788b940e21fb1b2d50d63c3e9fe74a48a1dabd0d02987b3a5c tail -f /dev/null 会使这个容器一启动就 一直保持运行，这样我们才有机会进去安装环境
+root@drone-ci-8-20:~# docker ps -a CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES ed1c0b756811 homebrew/ubuntu16.</description>
+    </item>
+    
+    <item>
+      <title>forgejo加drone加sonarQube持续集成cpp的code_review</title>
+      <link>/post/forgejo%E5%8A%A0drone%E5%8A%A0sonarqube%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90cpp%E7%9A%84code_review/</link>
+      <pubDate>Tue, 19 Sep 2023 18:48:29 +0800</pubDate>
+      
+      <guid>/post/forgejo%E5%8A%A0drone%E5%8A%A0sonarqube%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90cpp%E7%9A%84code_review/</guid>
+      <description>0 安装 Drone+ Forgejo(Gitea) +SonarQube 略，这部分闫工已经完成了，
+只需要知道，在部署的时候， Drone 已经设置了了Forgejo(Gitea) 产生的auth2 的token， 通过webhook，可以通过Forgejo(Gitea) 事件触发Drone里的动作
+下面是这几个服务的公司内部站点
+Forgejo.
+Drone CI
+SonarQube
+1 How It Works 1.1 SonarQube 首先，单独一个 sonarQube就可以创建扫描项目，配置项目，再在代码所在在设备上安装一个扫描器，按项目提示的参数，对本地代码扫描， 就会把扫描的结果发到服务上，然后可以在web仪盘显示扫描的结果。 但是我们想要自动化这个过程
+1.2 Forgejo 2022年8月左右 德国某一非营利组织 从gitea fork 出 forgejo， 原因是原gitea的社区管理队在没有经过社区的同意下，把管理权转交给某营利性组织
+Forgejo 职能和 Gitlab一样 ,用于源码的版控，同时通过webhook， 把git事件 通过http post到Drone服务
+1.3 Drone Drone订阅了Forgejo的webhook事件，
+并且能从Forgejo 上的Git repository的根目录获取配置文件， 结合 Webhook事件和Git repository的根目录获取配置文件，执行事件， 执行事件的具体逻辑，则被称为 Drone Runner.
+Runner有又exe Runner 和docker Runner， 顾名思意，就是执行命令行动作，或执行docker 动作
+如果把Forgejo 的Webhook事件看作Qt中的信号的话， 那Drone就是槽函数所在的对象，Runner是具体的槽函数
+1.4 组合起来协作 1.在服务搭建的时候，Forgejo的auth2 token已经设置给了Drone,所以当打开Drone的登录界面时，会自动用使用forgejo的token通过open connect id的方式登录。并且Drone登录后可以通过主动点击同步按钮同步Forgejo上的项目(当前用户参与的项目)</description>
+    </item>
+    
+  </channel>
+</rss>

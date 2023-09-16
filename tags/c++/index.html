@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/images/site.webmanifest">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="hbb&#39;s blog">
+    <title>C&#43;&#43; | hbb&#39;s blog</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/theme-override.css">
+    <header>
+
+  <nav>
+    <ul>
+      
+      
+      <li class="pull-left ">
+        <a href="/">~/hbb&#39;s blog</a>
+      </li>
+      
+      
+      <li class="pull-left current">
+        <a href="/tags/">~/tags</a>
+      </li>
+      
+
+      
+      
+      <li class="pull-right">
+        <a href="/index.xml">~/rss</a>
+      </li>
+      
+      
+      <li class="pull-right">
+        <a href="/about">~/about me</a>
+      </li>
+      
+
+    </ul>
+  </nav>
+</header>
+
+  </head>
+<form id="search" class="pull-right"
+    action='/search/' method="get">
+    <label hidden for="search-input">Search site</label>
+    <input type="text" id="search-input" name="query"
+    placeholder="Type here to search">
+    <input type="submit" value="search">
+</form>
+
+
+  <body>
+    <br/>
+
+
+<div class="content-wrapper">
+
+  <h1>C++</h1>
+  
+
+  
+
+  <ul>
+     
+     
+     
+     <li>
+       <span class="date">2023/09/27</span>
+       <a href="/post/%E4%B8%BAdrone%E5%88%B6%E4%BD%9Cqt%E7%BC%96%E8%AF%91%E6%89%93%E5%8C%85%E7%9A%84ubuntu%E7%8E%AF%E5%A2%83%E7%9A%84docker%E9%95%9C%E5%83%8F/">为drone制作qt编译打包的ubuntu环境的docker镜像</a>
+     </li>
+     
+     <li>
+       <span class="date">2023/09/19</span>
+       <a href="/post/forgejo%E5%8A%A0drone%E5%8A%A0sonarqube%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90cpp%E7%9A%84code_review/">forgejo加drone加sonarQube持续集成cpp的code_review</a>
+     </li>
+     
+     <li>
+       <span class="date">2023/09/17</span>
+       <a href="/post/cpp%E8%B7%A8%E5%B9%B3%E5%8F%B0%E9%A1%B9%E7%9B%AE%E5%9C%A8windows%E4%B8%8A%E7%9A%84%E6%96%87%E6%9C%AC%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98/">cpp跨平台项目在windows上的文本编码问题</a>
+     </li>
+     
+   </ul>
+</div>
+    <footer>
+      
+<script>
+(function() {
+  function center_el(tagName) {
+    var tags = document.getElementsByTagName(tagName), i, tag;
+    for (i = 0; i < tags.length; i++) {
+      tag = tags[i];
+      var parent = tag.parentElement;
+      
+      if (parent.childNodes.length === 1) {
+        
+        if (parent.nodeName === 'A') {
+          parent = parent.parentElement;
+          if (parent.childNodes.length != 1) continue;
+        }
+        if (parent.nodeName === 'P') parent.style.textAlign = 'center';
+      }
+    }
+  }
+  var tagNames = ['img', 'embed', 'object'];
+  for (var i = 0; i < tagNames.length; i++) {
+    center_el(tagNames[i]);
+  }
+})();
+</script>
+
+      
+      <hr/>
+      蚓无爪牙之利，筋骨之强，上食埃土，下饮黄泉，用心一也
+      
+    </footer>
+  </body>
+</html>
+
+<script>
+window.store = {
+    
+    "\/tags\/cmake\/": {
+        "title": "CMake",
+        "tags": [],
+        "content": "", 
+        "url": "\/tags\/cmake\/"
+    },
+    
+    "\/": {
+        "title": "Home",
+        "tags": [],
+        "content": " 欢迎来到我的博客 Posts: ", 
+        "url": "\/"
+    },
+    
+    "\/post\/": {
+        "title": "Posts",
+        "tags": [],
+        "content": "", 
+        "url": "\/post\/"
+    },
+    
+    "\/tags\/qml\/": {
+        "title": "Qml",
+        "tags": [],
+        "content": "", 
+        "url": "\/tags\/qml\/"
+    },
+    
+    "\/tags\/qt5\/": {
+        "title": "Qt5",
+        "tags": [],
+        "content": "", 
+        "url": "\/tags\/qt5\/"
+    },
+    
+    "\/post\/qt5-cmake-qml%E5%A4%9A%E8%AF%AD%E8%A8%80%E5%AE%9E%E8%B7%B5\/": {
+        "title": "qt5-cmake-qml多语言实践",
+        "tags": ["Qt5","CMake","Qml","Translator",],
+        "content": "1. 编码 1.1 CMake # 添加引用Qt的名为LinguistTools的component find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core LinguistTools) find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Gui Widgets Quick Qml QuickControls2 LinguistTools) #定义需要生成的.ts ,放到TS_FILES这个cmake变量中 set(TS_FILES src/translations/zh_CN.ts src/translations/en_US.ts src/translations/ja_JP.ts ) #扫描这dv_app,dv_camera, dv_common这三个目录，把需要翻译的字符串扫描进.ts文件中 qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR}/dv_app ${CMAKE_SOURCE_DIR}/dv_camera ${CMAKE_SOURCE_DIR}/dv_common ${TS_FILES} ) #在生成 xxx可执行文件时，把执行扫描生成.ts ，再把.ts生成.qm翻译二进制文件 add_library(xxx SHARED ${TS_FILES} #这一行只是为了在qt creator中看到.ts文件 ${QM_FILES} ) #复制翻译文件.qm到 生成目录的translations文件夹 add_custom_command(TARGET xxx POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy ${QM_FILES} $\u0026lt;TARGET_FILE_DIR:dv_common\u0026gt;/translations ) 1.2. c++ 1.2.1 简单封装加载qm翻译文件的逻辑 bool cpp_utility::load_language_qm(QString filePath) { try { std::shared_ptr\u0026lt;QTranslator\u0026gt; translator = prism::Container::get()-\u0026gt;resolve_object\u0026lt;QTranslator\u0026gt;(); if(!translator) { if(!QCoreApplication::removeTranslator(translator.get())) { std::shared_ptr\u0026lt;QTranslator\u0026gt; empty ; prism::Container::get()-\u0026gt;register_instance(empty); } else throw std::string(\u0026#34;卸载多语言翻译器失败\u0026#34;); } if(!filePath.isEmpty()) { std::shared_ptr\u0026lt;QTranslator\u0026gt; tr = std::make_shared\u0026lt;QTranslator\u0026gt;(); if(tr-\u0026gt;load(filePath)) { if(QCoreApplication::installTranslator(tr.get())) prism::Container::get()-\u0026gt;register_instance(tr); else throw std::string(\u0026#34;安装多语言翻译器失败\u0026#34;); } else throw std::string(\u0026#34;加载多语言文件失败:\u0026#34;) + filePath.toStdString(); } else { qInfo()\u0026lt;\u0026lt;\u0026#34;正在卸载非中文的多语言翻译器\u0026#34;; } //通知qml engine，如果有的话 std::shared_ptr\u0026lt;QQmlApplicationEngine\u0026gt; engine = Container::get()-\u0026gt;resolve_object\u0026lt;QQmlApplicationEngine\u0026gt;(); if(engine) engine-\u0026gt;retranslate(); } catch(std::string \u0026amp; mes) { qCritical()\u0026lt;\u0026lt; QString::fromStdString(mes); return false; } return true; } 上面这个c++方法，即被放到ioc容器中，又被注册到qml engine，所以c++和qml中都可以直接调用，只需要传入一个qm的文件路径，就可以加载，并在加载完成后通知qml engine刷新ui 。\n通知的这段逻辑需要qt版本至少qt 5.10\n1.3 调用 程序加载时 用户选择切换语言时 3.怎么让项目中的字符串被扫描到 .ts文件中 在qml中\nText{ text: qsTr(\u0026#34;惨惨字字，将被扫描到.ts文件中，任人翻译\u0026#34;) } 在c++中\nqDebug() \u0026lt;\u0026lt; QObject::tr(\u0026#34;卑微字字，将被扫描到.ts文件中，任人翻译\u0026#34;); 4. 怎么使用qt 小工具翻译 没有翻译完，软件也不会报错，只是会在切换语言时，不会变更相关的翻译\n例如有一个需要翻译的文字[\u0026ldquo;黄滨滨\u0026rdquo;]中文翻译为[\u0026ldquo;靓仔\u0026rdquo;]，英语翻译为[\u0026ldquo;huangbinbin\u0026rdquo;]完了，但是日语没有翻译，\n这时中文情况下显示[\u0026ldquo;靓仔\u0026rdquo;]，\n切换英文后应会显示[\u0026ldquo;huangbinbin\u0026rdquo;]\n切换日语后，由于 没有翻译，会导致仍然显示[\u0026ldquo;huangbinbin\u0026rdquo;]，\n并不是像你直觉的那样，仍然显示[\u0026ldquo;黄滨滨\u0026rdquo;]\n*. 注意事项 *.1 首次生成 .ts，需要设置一下语言 第三行中， language需要正确设置为BCP 47规范中的\u0026lt;小写国家\u0026gt;_\u0026lt;大写地区\u0026gt;，之后生成的.qm文件，才能被加载到qt 程序中，否则会报错.\n常用的语言\n英语 en_US 中文 zh_CN 日语 ja_JP 更多参阅 Language Tags (BCP 47)\n", 
+        "url": "\/post\/qt5-cmake-qml%E5%A4%9A%E8%AF%AD%E8%A8%80%E5%AE%9E%E8%B7%B5\/"
+    },
+    
+    "\/tags\/": {
+        "title": "Tags",
+        "tags": [],
+        "content": "", 
+        "url": "\/tags\/"
+    },
+    
+    "\/tags\/translator\/": {
+        "title": "Translator",
+        "tags": [],
+        "content": "", 
+        "url": "\/tags\/translator\/"
+    },
+    
+    "\/tags\/qt-creator\/": {
+        "title": "Qt Creator",
+        "tags": [],
+        "content": "", 
+        "url": "\/tags\/qt-creator\/"
+    },
+    
+    "\/post\/ubuntu16.04%E7%BC%96%E8%AF%91qt5.15%E7%9A%84qt-creator\/": {
+        "title": "ubuntu16.04编译qt5.15的qt creator",
+        "tags": ["Qt5","Qt Creator",],
+        "content": "1 为什么需要自己编译 相机软件 使用最新版本的qt 开源版本 5.15.2，以及cmake，qml来组织工程，\n遇到几个问题\n1.1 Qt5.15.2预装的Qt Creator不支持在Ubuntu16.04环境运行 qt 5.15.2预装版本的qt creator是在ubuntu20下使用qt 6和gcc9编译的，ubuntu16.04 下不能使用，我曾尝试升级ubuntu16的libc，最终把ubuntu16 环境搞崩溃，重启之后很多系统软件都不能运行了，apt升级也升级不了，依赖树产生问题。除非你添加18或20的源才能正确的升级，所以不得不重做开发环境， 先用qt 5.12.6预装的qt creator 4.10.2进行开发\n1.2 Qt Creator 4.10.2的问题 加载Qt 5.15.2的qml 控制库，很多误报，不管是在cmake运行，还是IDE里的代码提示，都很多噪音\ncmake 子模块代码变更后， 检测不到变更，只能整个工程rebuild才能正常\ncmake功能支持比较粗糙， 设置cmake比较不方便\ncmake循环依赖问题(在新的版本上不是问题)\nCMake Warning at CMakeLists.txt:176 (add_executable): Cannot generate a safe runtime search path for target tst_dv_camera because there is a cycle in the constraint graph: dir 0 is [/home/deepvision/source/repos/dv_app_solution/build-dv_camera-Desktop_Qt_5_15_2_GCC_64bit-Debug] dir 4 must precede it due to runtime library [libdv_zlog.so] dir 5 must precede it due to runtime library [libdv_zlog.so] dir 1 is [/home/deepvision/source/repos/dv_app_solution/vcpkg_installed/x64-linux-dynamic/debug/lib] dir 2 must precede it due to runtime library [librc_genicam_api.so.2.6] dir 4 must precede it due to runtime library [libdv_zlog.so] dir 5 must precede it due to runtime library [libdv_zlog.so] dir 2 is [/home/deepvision/source/repos/dv_app_solution/vcpkg_installed/x64-linux-dynamic/lib] dir 0 must precede it due to runtime library [libdv_camera.so] dir 1 must precede it due to runtime library [libminizip.so] dir 4 must precede it due to runtime library [libdv_zlog.so] dir 3 is [/home/deepvision/Qt/5.15.2/gcc_64/lib] dir 4 is [/home/deepvision/source/repos/zlog/lib/linux] dir 5 must precede it due to runtime library [libdv_zlog.so] dir 5 is [/home/deepvision/source/repos/dv_app_solution/vcpkg_installed/x64-linux-dynamic/share/zlog/../../lib] dir 0 must precede it due to runtime library [libdv_camera.so] dir 1 must precede it due to runtime library [libminizip.so] dir 4 must precede it due to runtime library [libdv_zlog.so] 1.3 尝试过的其他解决方法 我到github release下载了多个qt creator的版本，发现即使是qt creator 4.15版本，也是依赖了libc 2.29（奇怪的是最新版的qt creaotr只依赖了libc 2.28）， 远超出ubuntu16 的2.23\n可以用这条指令查看libc的版本\ndeepvision@ubuntu:/$ strings /lib/x86_64-linux-gnu/libc.so.6 |grep GLIBC GLIBC_2.2.5 GLIBC_2.2.6 GLIBC_2.3 GLIBC_2.3.2 GLIBC_2.3.3 GLIBC_2.3.4 GLIBC_2.4 GLIBC_2.5 GLIBC_2.6 GLIBC_2.7 GLIBC_2.8 GLIBC_2.9 GLIBC_2.10 GLIBC_2.11 GLIBC_2.12 GLIBC_2.13 GLIBC_2.14 GLIBC_2.15 GLIBC_2.16 GLIBC_2.17 GLIBC_2.18 GLIBC_2.22 GLIBC_2.23 GLIBC_PRIVATE GNU C Library (Ubuntu GLIBC 2.23-0ubuntu11.3) stable release version 2.23, by Roland McGrath et al. 我也试过单独为qt creator编译高版本的libc，放在单独的目录，结果发现，ubunt16.04下，最多只能调用libc 2.27的版本保证不会崩溃， 一旦调用了2.28或2.29就会崩溃\nlibc 可以通用这个脚本编译,记录一下，如果将来有需要用到的话\n#!bash cd /home/deepvision/lib/ wget http://ftp.gnu.org/gnu/glibc/glibc-2.29.tar.gz tar zxvf glibc-2.29.tar.gz cd glibc-2.29 mkdir build cd build ../configure --prefix=/opt/glibc-2.29 make sudo make install 由于以上几个方法都没有成功，所以决定自己编译qt creator\n2 编译 由于我虚拟机空间不足，我后来卸载掉了qt 6，所以查看qt creator源码后，我使用qt 5编译的最后一个版本qt creator 8.\n参照readme 进行编译， 记录一下编译中遇到的问题和解决步骤\nqt creator 最新版本目前是qt creator 12,但其实8已经算是很新的版本了\n我查看2022年3月份时我拉取的qt creator代码，那时最新的开发分支才7 beta\n所以8也算是比较新的版本\n2.1 编译LLVM 2.1.1 正常流程 克隆代码\ngit clone -b release_130-based --recursive https://code.qt.io/clang/llvm-project.git 创建目录\ncmake生成\ncmake \\ -D CMAKE_BUILD_TYPE=Release \\ -D LLVM_ENABLE_RTTI=ON \\ -D LLVM_ENABLE_PROJECTS=\u0026#34;clang;clang-tools-extra\u0026#34; \\ -D CMAKE_INSTALL_PREFIX= 自己指定安装目录 \\ ../llvm-project/llvm 构建\ncmake --build . --target install 2.2.2 cmake失败问题解决 2.2.2.1 libxml2 找不到 sudo apt install dev-libxml2 安装\ncmake生成中加入参数 -D CMAKE_PREFIX_PATH=\u0026quot;/usr/\u0026quot;\ncmake \\ -D CMAKE_BUILD_TYPE=Release \\ -D LLVM_ENABLE_RTTI=ON \\ -D LLVM_ENABLE_PROJECTS=\u0026#34;clang;clang-tools-extra\u0026#34; \\ -D CMAKE_INSTALL_PREFIX= \u0026#34;自己指定安装目录，后面qt creator执行cmake时会用到\u0026#34; \\ -D CMAKE_PREFIX_PATH=\u0026#34;/usr/\u0026#34; ../llvm-project/llvm 2.2.2.1 config.guess: 71: Syntax error: word unexpected (expecting \u0026ldquo;in\u0026rdquo;) 参照 llvm github issue\nconfig.guess Syntax error: · Issue #52740 · llvm/llvm-project (github.com)\n应该config.guess文件格式问题，准确说是换行符问题\n因为我在windows上拉了代码后，上传到公司ftp服务器上，再在linux下载代码导致的问题\n如果直接在linux拉代码应该不会有这个问题\n解决方法 也简单，issue中提到使用dos2unix 对这个配置文件格式化成unix的换行符\nsudo apt install dos2unix doc2unux path/to/config.guess 2.2.2.2 其他注意事项 llvm编译会占用大量磁盘空间和内存，提前准备好防止编译失败要重新编译\n2.2 编译qt creator 克隆源码后切换到你想要编译的分支\n例如我想用qt 5 编译v8.0.2 (最后一个qt5编译的qt creaotr版本)\n创建 build文件夹，进入文件夹生成cmake\ncmake -DCMAKE_BUILD_TYPE=Debug -G Ninja \u0026#34;-DCMAKE_PREFIX_PATH=/home/deepvision/Qt/5.15.2/gcc_64;../../llvm/install\u0026#34; ../qt-creator 执行编译\ncmake --build . 执行安装\ncmake --install . --prefix ../ubuntu16.04-qtcerator8.0.2 然后修改qt creator的启动脚本，在脚本后面导致 ld_library_path变量之前，把qt 5的路径加进去\nLD_LIBRARY_PATH=/home/deepvision/Qt/5.15.2/gcc_64/lib:$LD_LIBRARY_PATH} export LD_LIBRARY_PATH 就可以用qtcreator.sh启动程序了\n如果用在线安装器安装了qt 5.15会有 ~/.local/share/applications/org.qt-project.qtcreator.desktop配置，修改为刚才修改好的启动脚本就可以从菜单或任务栏打开编译好的qt creator了\ndeepvision@ubuntu:~$ cat ~/.local/share/applications/org.qt-project.qtcreator.desktop [Desktop Entry] Type=Applicatio Exec=\u0026#34;/home/deepvision/source/repos/qtcreator/ubuntu16.04-qtcerator8.0.2/bin/qtcreator.sh\u0026#34; Name=Qt Creator GenericName=The IDE of choice for Qt development. Icon=QtProject-qtcreator StartupWMClass=qtcreator Terminal=false Categories=Development;IDE;Qt; MimeType=text/x-c++src;text/x-c++hdr;text/x-xsrc;application/x-designer;application/vnd.qt.qmakeprofile;application/vnd.qt.xml.resource;text/x-qml;text/x-qt.qml;text/x-qt.qbs; 3 解决的问题验证 左边是qt creator8 右边是qt creator 4.10\nqml 和cmake都不误报了\nqt creator8已上传到dv-rd\n", 
+        "url": "\/post\/ubuntu16.04%E7%BC%96%E8%AF%91qt5.15%E7%9A%84qt-creator\/"
+    },
+    
+    "\/tags\/asset\/": {
+        "title": "Asset",
+        "tags": [],
+        "content": "", 
+        "url": "\/tags\/asset\/"
+    },
+    
+    "\/tags\/binaries\/": {
+        "title": "Binaries",
+        "tags": [],
+        "content": "", 
+        "url": "\/tags\/binaries\/"
+    },
+    
+    "\/tags\/vcpkg\/": {
+        "title": "VCPKG",
+        "tags": [],
+        "content": "", 
+        "url": "\/tags\/vcpkg\/"
+    },
+    
+    "\/post\/vcpkg%E8%B5%84%E4%BA%A7%E7%BC%93%E5%AD%98%E4%B8%8E%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%93%E5%AD%98\/": {
+        "title": "vcpkg资产缓存与二进制缓存",
+        "tags": ["VCPKG","Asset","Binaries",],
+        "content": "0x01 背景 翻墙用了一段时间的vcpkg了，在项目中使用vcpkg安装管理了一众开源框架\nrange-v3 catch2 boost fmt opencv4 体验感很好，除了两个问题点\n需要翻墙才能安装依赖 就算其他同事也翻墙使用vcpkg，那上面的库他需要从克隆代码，下载二进制，编译，重新来一次，很耗时 于是围绕这两个问题挖掘msdn文档，用这个markdown记录探索过程\n0x02 坑 为了解决第1个问题，我把这几个库，以及vcpkg本身，从github上迁移到公司内网的forgejo服务器上，然后尝试修改vcpkg中，包的配置，试图让vcpkg改为从公司内网下载代码。像catch2, fmt, range-v3这几个库，结构比较简单，用这种方式确实成功了，工作量也不大，维护也简单，只需要修改vcpkg源码中这几个库的url，从github改为公司的forgejo路径就行了。但是当我在处理opencv4和boost的时候，我发现光是boost就有一百八十几个git submodule ， 不过这还不足以让我推翻这个方法， 因为我觉得可以通过脚本+ forgejo 的api服务+ access token就能用脚本批量的创建库存，上传代码。 直到我尝试修改opencv的vcpkg中的配置，我发现这些超大规模的大型开源库，并不只是用git clone拉取编译所需要的依赖，有的是通过http下载tar包，zip包。并且有时候并不是opencv4这种顶层项目下载的，而是它的子模块，或子模块的模块下载的。 这样一来，即使把源码都迁移到内网的forgejo上了，仍然会有一些二进制的包，没有在内网之中。 所以这个方案行不通\n0x03 最终解 在msdn上把vcpkg相关的文档精读了一下，我发现vcpkg不管是下载的文件，还是编译的文件，都可以缓存 ，而且可以在网络位置上共享。我测试了一下，把两台电脑设置了同样的网络位置的缓存目录，在一台电脑上翻墙，编译boost1.83.0和opencv4.5.5，在另一台电脑上，确实不翻墙的情况下也可以用vcpkg安装boost 1.83.0以及opencv 4.5.5，不需要重新从github下载，。当然还是需要从网络位置下载的，缓存几百兆的二进制文件如果不是在杭州，下载也是需要时间的，但相对来说快了不少。\n下面说说怎么配置\n1.研发的nas目录 dv-rd中创建缓存目录 vcpkg_asset_cache用于缓存安装过程中下载二进制\nvcpkg_binary_cache 用于缓存编译时生成的二进制包\n2.配置环境变量，告诉vcpkg从这两目录读写缓存 windows:\nVCPKG_BINARY_SOURCES clear;files,Z:/sw/vcpkg_binary_cache/,readwrite\nX_VCPKG_ASSET_SOURCES clear;x-azurl,file://Z:/sw/vcpkg_asset_cache/,,readwrite\nlinux:由于同办法想windows一样把网络位置映射成为磁盘，所以用nfs挂载的方式\nmount -t nfs 10.2.1.11:/data/syncthing_data /xxxx/xxx export X_VCPKG_ASSET_SOURCES=\u0026#34;clear;x-azurl,file:/nfs/vcpkg_cache/vcpkg_cache_linux/asset/,,readwrite\u0026#34; export VCPKG_BINARY_SOURCES=\u0026#34;clear;files,/nfs/vcpkg_cache/vcpkg_cache_linux/binary/,readwrite\u0026#34; 这里也可以配置网络位置只读，加一个本地路径读写，我电脑空间比较紧张，就只配置了远程的了。\n然后使用vcpkg安装的时候，就会自动从这里面找缓存了。如果没有的缓存，只需要在翻墙的电脑上用vcpkg安装一下，就会自动上传了。\n", 
+        "url": "\/post\/vcpkg%E8%B5%84%E4%BA%A7%E7%BC%93%E5%AD%98%E4%B8%8E%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%93%E5%AD%98\/"
+    },
+    
+    "\/post\/%E5%88%9B%E5%BB%BAvcpkg%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93\/": {
+        "title": "创建vcpkg私有仓库",
+        "tags": ["CMake","VCPKG",],
+        "content": "0.前言 ​ 最近在做公司一个新的工程，对标海康的MVS, 基于GENICAM通用协议，目标是适配市场上众多的厂牌的基于GENICAM协议的相机。 由于预计到会引用很多开源项目，且会围绕相机扩展很多公司的业务功能。所以我重新设计了新软件总体的架构，由原来的qmake改为cmake，并使用插件式开发。这即方便于引用其他开源框架，也可以使公司的代码模块化，更容易维护以及复用。但在众多开源模块与公司的模块，以及公司的不同的项目之间要如何处理依赖关系？如何科学的减少重复的工作？满地都是cmake + git submodule，我抬头却看到了vcpkg私有仓库。\n1.随便聊聊 1.1 包管理器 ​ python有pip， c#有nuget ， java有maven， 基本上每一个语言都有一个亲妈背书的包管理器，可以递归解决项目依赖，但是c++没有。\n语言特性太复杂， 编译选项不一样，同样的代码生成的程序就可能不能一起工作 模块元编程只能以源码方式发布，而不是二进制 ABI兼容性问题导致需要根据cpu架构发布不同的二进制文件版本 ​ 基于上面的问题以及等等，导致c++的包管理不好实现，长久以来，c++开发者如果需要采用其他开源项目，通常需要手动把 其他c++项目的源码，静态链接库，动态链接库集成到自己的项目里，在集成的过程中，往往不是顺利的，可能需要处理依赖关系，环境问题，编译选项问题。\n1.2 Cmake cmake的出现简化了这个过程， 它是一款跨平台c++项目的管工具， 可以很方便的把cmake工程集成到另一个cmake工程中，然后指定生成器，生成各种类型的构建工具的项目，如ninja,visual studio 等，，并且它可以枚举项目的依赖项目，但是它没有版本控制的能力，所以通常与git联合使用 。 目前基本主流的IDE都集成了cmake和git，并且c++开源项目大多数也是以cmake的方式组织工程，因此使用cmake+git可以方便的集成开源项目。这也是我想用cmake的原因之一，除此之外，只要项目没有相互依赖，不管所处何目录结点，cmake都支持并行构建（qmkae子目录构建完才会构建父目录），可以更好的利用多核计算机的性能。所以cmake已经足够好了，为什么还需要vcpkg?\n​ 想像一下，你有一个巨大的项目，依赖关系比较复杂，如果说顶层项目是第0层，某个第1层的项目A依赖了开源库D，另一个第1层的项目B的第2层项目BA也依赖了项目D， 你如果不修改优化工程结构，你的项目目录里将存在两份D的源码，并且如果修改了其中一份D的代码，需要把它提交给他的父项目们，直到第0层，然后再到另一份D代码处，拉代码后，再一层一层的提交到第0层。这样别人拉取你的第0层代码时，才能简单的git submodule update --init --recursive，克隆下来。而项目中可能会出现多个D项目这样的存在，这意味着即使使用git submodule，也需要做很多重复工作 。 而vcpkg可以解决这种问题,甚至允许控制每份D的代码版本不一样。\n1.3 vcpkg ​ vcpkg是微软推出的c++ 源码级别的跨平台包管理器。虽然vc开头，但不仅限于visual c++， 它基本上=git + cmake,但扩展了包管理器应该有的功能，可以方便的解决项目依赖问题，也可以方便切换依赖项目的ABI，Cpu架构，目标平台。 vcpkg有经典模式和清单模式两种模式。\n经典模式\n允许安装D到系的某个目录，然后所有层级的项目都引用这个 D目录里的cmake module.\n清单模式\n允许在每个层级cmakelist.txt旁边创建一个vcpkg.json配置文件，把需要的包配置在里面，然后执行 vcpkg install --recursive 递归安装依赖包。\n可以看出 清单模式可以解决我在1.2第二段落中描述的问题。但拿来就用还是有一些局限性。以下两种情况\n需要针对性修改某个项目中某个vcpkg安装的开源库依赖，编译选项或bugfix，但其不希望他项目被影响 希望把公司的项目需要集成到vcpkg，享受包管理器带来的便利，又不想开源 何以解忧，唯有搭建自己的vcpkg 仓库，这也是本文档想讲的内容(终于酝酿好氛围)\n​ 除此这外，vcpkg相对于公司现在的项目管理，还有一个优点，就是减少二进制文件的提交，理论上只提交源码就行，install的时候，vcpkg会根据配置 使用git签出正确分支的源码，构建为本地的二进制文件\n2. 搭建公司内私有vcpkg仓库 ​ 目标是把开源的项目，如open cv之类的 以及公司的软件模块发布到私有仓库上。理论上，开源的库如果没有额外的修改，直接用vcpkg现有的库就行了，但因为我们在墙内，如果想提升vcpkg安装的速度， 我们最好还是把我们项目中用到的开源库迁移到公司内部git平台上，设置为镜像仓库，定时从github同步。 因此本小节，主要拆分为以下三个步骤\n搭建vcpkg 私有registry 把项目中使用到的开源项目同步到公司git 平台上 把公司的git 平台上的repos登记到私有的vcpkg registry 2.1 搭建vcpkg 私有仓库 参考\n创建一个空的git repository\nmkdir -p ~/source/repos/prism_registry \u0026amp;\u0026amp; cd ~/source/repos/prism_registry git init . 创建一个*** baseline.json*** 文件，放在根目录 versions目录\nmkdir versions \u0026amp;\u0026amp; cd versions vim baseline.json 写入 下面的json内容\n{ \u0026#34;default\u0026#34;: {} } 2.2 添加库到vcpkg私有仓库 这里主要演示添加github库 和非github库两种方式\n虽然我们应该主要使用第二种方式\n2.2.1 添加github仓库示例 不管想添加到vcpkg仓库的项目是不是来自github，都需要执行这两步\n添加port 添加version 2.2.1.1 添加port 创建ports目录，在这里面编辑你想放到你vcpkg私有仓库的信息\n例如我想把我的prism 库放到私有库，就在ports目录中再创建一个prism的文件夹\nprism是一个只有头文件，且只依赖c++标准库的 c++库\nmkdir -p ~/source/repos/prism_registry/ports/prism \u0026amp;\u0026amp; cd ~/source/repos/prism_registry/ports/prism 然后在prism目录中创建文件 vcpkg.json ，把prism初始版本的信息写进去，因为我这个库没有依赖，所以没有写依赖项，如果有，在json里加\u0026quot;dependencies \u0026ldquo;:[]就行\n{ \u0026#34;name\u0026#34;: \u0026#34;prism\u0026#34;, \u0026#34;version\u0026#34;: \u0026#34;1.0.0\u0026#34;, \u0026#34;description\u0026#34;: \u0026#34;a static reflect library of c++\u0026#34;, \u0026#34;homepage\u0026#34;: \u0026#34;https://github.com/nocanstillbb/prism\u0026#34; } 同时把vcpkg.json也提交到prism存储库根目录\n然后再在 ~/source/repos/prism_registry/ports/prism 中创建一个空的protfile.cmake\n做到这一步，你的文件目录应该是这样的\n../ prism_registry/ | .git/ | ports/ | | prism/ | | | protfile.cmake | | | vcpkg.json | versions/ | | baseline.json\n测试vcpkg能不能正常识别这个json文件\n$ cd ~/source/repos/prism_registry/prism_registry $ vcpkg install prism --overlay-ports=ports/prism Computing installation plan... The following packages will be built and installed: prism:x64-windows -\u0026gt; 1.0.0 -- D:\\source\\repos\\prism_registry/ports/prism Detecting compiler hash for triplet x64-windows... Restored 0 package(s) from C:\\Users\\kokbi\\AppData\\Local\\vcpkg\\archives in 155 us. Use --debug to see more details. Installing 1/1 prism:x64-windows... Building prism:x64-windows... -- Installing port from location: D:\\source\\repos\\prism_registry/ports/prism CMake Error at scripts/ports.cmake:113 (message): Port is missing portfile: D:/source/repos/prism_registry/ports/prism/portfile.cmake error: building prism:x64-windows failed with: BUILD_FAILED Elapsed time to handle prism:x64-windows: 27 ms Please ensure you\u0026#39;re using the latest port files with `git pull` and `vcpkg update`. Then check for known issues at: https://github.com/microsoft/vcpkg/issues?q=is%3Aissue+is%3Aopen+in%3Atitle+prism You can submit a new issue at: https://github.com/microsoft/vcpkg/issues/new?title=[prism]+Build+error\u0026amp;body=Copy+issue+body+from+D%3A%2Fsource%2Frepos%2Fvcpkg%2Finstalled%2Fvcpkg%2Fissue_body.md 根据打印出来的信息，可以知道vcpkg安装时正确定位到port/prism/vcpkg.json了，只是protfile.cmake中是空的才导致安装失败了\n接下来添加protfile.cmake内容\nvcpkg_from_github( OUT_SOURCE_PATH SOURCE_PATH REPO nocanstillbb/prism REF e4cb55e02bfad354ba86d70f5555fe12d8f70d10 SHA512 a9eebc68ed045ccac650950b5ba8b1f172fde8244856c4b5e0ac38977711f5e3bbfc305ec831c47787e4994d7faff4ef01bf525e589b140dff8a66b10febb6e6 HEAD_REF master ) #https://learn.microsoft.com/en-us/vcpkg/examples/packaging-github-repos vcpkg_cmake_configure( SOURCE_PATH \u0026#34;${SOURCE_PATH}\u0026#34;) vcpkg_cmake_install() #vcpkg_cmake_config_fixup(CONFIG_PATH lib/cmake/${PORT}) #vcpkg_cmake_config_fixup() vcpkg_fixup_pkgconfig() vcpkg_copy_pdbs() file(REMOVE_RECURSE \u0026#34;${CURRENT_PACKAGES_DIR}/debug\u0026#34;) file( INSTALL \u0026#34;${SOURCE_PATH}/LICENSE\u0026#34; DESTINATION \u0026#34;${CURRENT_PACKAGES_DIR}/share/${PORT}\u0026#34; RENAME copyright) file( INSTALL \u0026#34;${SOURCE_PATH}/usage\u0026#34; DESTINATION \u0026#34;${CURRENT_PACKAGES_DIR}/share/${PORT}\u0026#34;) 其中的shar512是下载的源码归档包的sha512校验和的值，可以自己下载下来校验，填写进去，也可以先写一个0，安装时会安装失败，但会把真正的值打印出来。\n$ vcpkg install prism --overlay-ports=ports/prism Computing installation plan... The following packages will be built and installed: prism:x64-windows -\u0026gt; 1.0.0 -- D:\\source\\repos\\prism_registry/ports/prism Detecting compiler hash for triplet x64-windows... -- Using HTTP(S)_PROXY in environment variables. Restored 0 package(s) from C:\\Users\\kokbi\\AppData\\Local\\vcpkg\\archives in 171 us. Use --debug to see more details. Installing 1/1 prism:x64-windows... Building prism:x64-windows... -- Installing port from location: D:\\source\\repos\\prism_registry/ports/prism -- Downloading https://github.com/nocanstillbb/prism/archive/59fc49ca76338364c6351475a4ad5d80578f625.tar.gz -\u0026gt; nocanstillbb-prism-59fc49ca76338364c6351475a4ad5d80578f625.tar.gz... [DEBUG] To include the environment variables in debug output, pass --debug-env [DEBUG] Trying to load bundleconfig from D:\\source\\repos\\vcpkg\\vcpkg-bundle.json [DEBUG] Failed to open: D:\\source\\repos\\vcpkg\\vcpkg-bundle.json [DEBUG] Bundle config: readonly=false, usegitregistry=false, embeddedsha=nullopt, deployment=Git, vsversion=nullopt [DEBUG] Metrics enabled. [DEBUG] Feature flag \u0026#39;binarycaching\u0026#39; unset [DEBUG] Feature flag \u0026#39;compilertracking\u0026#39; unset [DEBUG] Feature flag \u0026#39;registries\u0026#39; unset [DEBUG] Feature flag \u0026#39;versions\u0026#39; unset Downloading https://github.com/nocanstillbb/prism/archive/59fc49ca76338364c6351475a4ad5d80578f625.tar.gz [DEBUG] Trying to hash D:\\source\\repos\\vcpkg\\downloads\\nocanstillbb-prism-59fc49ca76338364c6351475a4ad5d80578f625.tar.gz.18080.part [DEBUG] D:\\source\\repos\\vcpkg\\downloads\\nocanstillbb-prism-59fc49ca76338364c6351475a4ad5d80578f625.tar.gz.18080.part has hash f03d4c918e5bda46cc1aa129edd192a74274b9c07f6634dedec47b986aad6e0e8689b019620c57507e07fea36adaf9dfbff9b41fcc166da5f0748a3a9d491529 error: Failed to download from mirror set error: File does not have the expected hash: url: https://github.com/nocanstillbb/prism/archive/59fc49ca76338364c6351475a4ad5d80578f625.tar.gz File: D:\\source\\repos\\vcpkg\\downloads\\nocanstillbb-prism-59fc49ca76338364c6351475a4ad5d80578f625.tar.gz.18080.part Expected hash: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 Actual hash: f03d4c918e5bda46cc1aa129edd192a74274b9c07f6634dedec47b986aad6e0e8689b019620c57507e07fea36adaf9dfbff9b41fcc166da5f0748a3a9d491529 把Actual hash复制下来写到portfile.cmake 重新测试安装\n$ vcpkg install prism --overlay-ports=ports/prism Computing installation plan... The following packages will be built and installed: prism:x64-windows -\u0026gt; 1.0.0 -- D:\\source\\repos\\prism_registry\\ports/prism Detecting compiler hash for triplet x64-windows... -- Using HTTP(S)_PROXY in environment variables. Restored 1 package(s) from C:\\Users\\kokbi\\AppData\\Local\\vcpkg\\archives in 44 ms. Use --debug to see more details. Installing 1/1 prism:x64-windows... Elapsed time to handle prism:x64-windows: 30.2 ms Total install time: 30.3 ms The package prism usage: find_package(prism::prism) target_include_directories(main INTERFACE ${PRISM_INCLUDE_DIRS}) more infomation: https://github.com/nocanstillbb/prism 好的项目，安装后不会提示警告和错误，如果这里有提示警告的话，就会提示一个错误，提示你如果要让库被收录到vcpkg的优选目录，要更正portfile.cmake消除这些错误和警告。\n正常这里还应该在安装之前执行一下项目的单元测试，这个先不管，不是必须的。接下来测试一下刚才安装的库能不能正常使用，先用vcpkg list查看信息\nPS D:\\Downloads\u0026gt; vcpkg list |findstr prism prism:x64-windows 1.0.0 a static reflect library of c++ 然后我把我项目中prism源码目录移除后，用ide查看引用时，已经正确定位到vcpkg的安装目录了\n编译也没有问题，说明成功了。\n2.2.1.2 添加versions 接下来添加version相关的信息\n在prism_registry/versions 中创建以你的存储库名称头一个字母+ “-”开关的目录， 添加的库是prism，所以创建的目录为p-\nmkdir -p ~/source/repos/prism_registry/versions/p- cd ~/source/repos/prism_registry/versions/p- vim prism.json 创建prism.json文件写入\n{ \u0026#34;versions\u0026#34;: [ { \u0026#34;version\u0026#34;: \u0026#34;1.0.0\u0026#34;, \u0026#34;git-tree\u0026#34;: \u0026#34;\u0026#34; } ] } git-tree 的值如此获取\ngit add ports/prism git commit -m \u0026#34;[prism] new port\u0026#34; 单独提交prism的ports目录， 提交内容以[portName]开头，如果你想要合并到vcpkg master的话，这个是规则之一\n然后 先不着急提交\ngit rev-parse HEAD:prots/prism 获取git分支HEAD上的git 目录的分支号，写入/versions/p-/prism.json中，刚才放空的git-tree\n然后编辑 versions/baseline.json\n{ \u0026#34;default\u0026#34;: { \u0026#34;prism\u0026#34;: { \u0026#34;baseline\u0026#34;: \u0026#34;1.0.0\u0026#34;, \u0026#34;port-version\u0026#34;: 0 } } } 然后把prism_registry 提交推送到公司forgejo上\n2.2.2 添加非github的库示例 上面的示例是vcpkg团队博客上的示例，所以用 vcpkg_from_github导入的，而我们私有的代码库是放在公司forgejo服务器上的，所以应该探索一种通用的方法，我查看vcpkg源码里的Ports，看到有的库使用的是vcpkg_from_git\nvcpkg_from_git( OUT_SOURCE_PATH LSS_SOURCE_PATH URL https://chromium.googlesource.com/linux-syscall-support REF 7bde79cc274d06451bf65ae82c012a5d3e476b5a ) file(RENAME \u0026#34;${LSS_SOURCE_PATH}\u0026#34; \u0026#34;${SOURCE_PATH}/src/third_party/lss\u0026#34;) 和带git补丁的写法\nvcpkg_from_git( OUT_SOURCE_PATH SOURCE_PATH URL https://sourceware.org/git/elfutils REF ca4a785fc3061c7d136b198e9ffe0b14cf90c2be #elfutils-0.186 PATCHES configure.ac.patch ) 除此之外没有什么区别, 反而少了sha512 检验的步骤，更简单了\n2.2.3 用vcpkg的简化添加version步骤 添加完port 并提交到git后，可以使用这个方式简单的更新version和baseline.json\n如果是在微软vcpkg 叉出来的分支上，添加了使用git添加了ports/prism后，就可以使用x-add-version --all来生成 version/p-/prism.json 以及 version/baseline.json中的prism的条目\n如果不是vcpkg叉出来的分支，而是公司的私有库的话，参照教程：使用 Git 将包发布到私有 vcpkg 注册表 |Microsoft学习 加点参数也可以使用这个工具\nvcpkg --x-builtin-ports-root=./ports --x-builtin-registry-versions-dir=./versions x-add-version --all --verbose 了解这个工具，如果需要ci集成的话，就会方便很多\n2.3 在项目中使用私有的vcpkg仓库 首先我在公司的forgejo上开了一个空的存储库，把 vcpkg私有仓库上传上去\n然后在测试项目的根目录创建vcpkg-configuration.json\n基于github的vcpkg ，扩展我们私有的库， 这种是比较合理的，如果需要对github上的库做定制化修改，只需要把库迁移到内网就行\n{ \u0026#34;default-registry\u0026#34;: { \u0026#34;kind\u0026#34;: \u0026#34;git\u0026#34;, \u0026#34;repository\u0026#34;: \u0026#34;https://github.com/microsoft/vcpkg\u0026#34;, \u0026#34;baseline\u0026#34;: \u0026#34;0da9fe986d07603da71f35ef8dd55512154a64bd\u0026#34; }, \u0026#34;registries\u0026#34;: [ { \u0026#34;kind\u0026#34;: \u0026#34;git\u0026#34;, \u0026#34;repository\u0026#34;: \u0026#34;http://10.1.8.8/AL/dv-vcpkg\u0026#34;, \u0026#34;baseline\u0026#34;: \u0026#34;36f0728c26661f67fca9b583bd99084e9491be93\u0026#34;, \u0026#34;packages\u0026#34;: [ \u0026#34;prism\u0026#34; ] } ] } baseline是vcpkg仓库的提交，一般建立一个项目时，初始化的时候更新一下就可以了，后继修改个别的库，可以通过指定库版本，或重写库版本的方式，使项目大部分的引用的库都是稳定的。\n关于vcpkg版本控制 可以参考这个文档Versioning reference | Microsoft Learn\n然后创建一个vcpkg.json\n{ \u0026#34;name\u0026#34;: \u0026#34;prismqt-core\u0026#34;, \u0026#34;version\u0026#34;: \u0026#34;0\u0026#34;, \u0026#34;dependencies\u0026#34;: [ \u0026#34;prism\u0026#34; ] } 这里的prism没有指定任何版本，所以 会从我们私有库的基本版本中获取默认的版本\n在测试项目根目录建立好这两个json后， 执行vcpkg install\n$ vcpkg.exe install Detecting compiler hash for triplet x64-windows... -- Using %HTTP(S)_PROXY% in environment variables. The following packages will be rebuilt: * catch2:x64-windows -\u0026gt; 3.4.0 -- C:\\Users\\user\\AppData\\Local\\vcpkg\\registries\\git-trees\\5796c1c0513a7b49f135e8acdd1976f53e9944ea * vcpkg-cmake:x64-windows -\u0026gt; 2023-05-04 -- C:\\Users\\user\\AppData\\Local\\vcpkg\\registries\\git-trees\\88a7058fc7fa73a9c4c99cfcae9d79e2abf87a5a * vcpkg-cmake-config:x64-windows -\u0026gt; 2022-02-06#1 -- C:\\Users\\user\\AppData\\Local\\vcpkg\\registries\\git-trees\\8d54cc4f487d51b655abec5f9c9c3f86ca83311f The following packages will be built and installed: prism:x64-windows -\u0026gt; 1.0.0 -- C:\\Users\\user\\AppData\\Local\\vcpkg\\registries\\git-trees\\668c45ba147cbef160d9c228712f5775cff242b2 Additional packages (*) will be modified to complete this operation. Restored 3 package(s) from C:\\Users\\user\\AppData\\Local\\vcpkg\\archives in 1.3 s. Use --debug to see more details. Removing 1/7 catch2:x64-windows Elapsed time to handle catch2:x64-windows: 217 ms Removing 2/7 vcpkg-cmake-config:x64-windows Elapsed time to handle vcpkg-cmake-config:x64-windows: 98 ms Removing 3/7 vcpkg-cmake:x64-windows Elapsed time to handle vcpkg-cmake:x64-windows: 113 ms Installing 4/7 vcpkg-cmake:x64-windows... Elapsed time to handle vcpkg-cmake:x64-windows: 16 ms Installing 5/7 vcpkg-cmake-config:x64-windows... Elapsed time to handle vcpkg-cmake-config:x64-windows: 16.5 ms Installing 6/7 catch2:x64-windows... Elapsed time to handle catch2:x64-windows: 58.2 ms Installing 7/7 prism:x64-windows... Building prism:x64-windows... -- Installing port from location: C:\\Users\\user\\AppData\\Local\\vcpkg\\registries\\git-trees\\668c45ba147cbef160d9c228712f5775cff242b2 -- Using cached D:/Users/user/Documents/source/repos/vcpkg/downloads/prism-62156a21f843168993c8e641f22efb380b8e7e62.tar.gz -- Cleaning sources at D:/Users/user/Documents/source/repos/vcpkg/buildtrees/prism/src/380b8e7e62-68fffb19a4.clean. Use --editable to skip cleaning for the packages you specify. -- Extracting source D:/Users/user/Documents/source/repos/vcpkg/downloads/prism-62156a21f843168993c8e641f22efb380b8e7e62.tar.gz -- Using source at D:/Users/user/Documents/source/repos/vcpkg/buildtrees/prism/src/380b8e7e62-68fffb19a4.clean -- Found external ninja(\u0026#39;1.10.2\u0026#39;). -- Configuring x64-windows -- Building x64-windows-dbg -- Building x64-windows-rel -- Using cached mingw-w64-i686-pkgconf-1~1.8.0-2-any.pkg.tar.zst. -- Using cached msys2-msys2-runtime-3.4.6-1-x86_64.pkg.tar.zst. -- Using msys root at D:/Users/user/Documents/source/repos/vcpkg/downloads/tools/msys2/6f3fa1a12ef85a6f -- Installing: D:/Users/user/Documents/source/repos/vcpkg/packages/prism_x64-windows/share/prism/copyright -- Installing: D:/Users/user/Documents/source/repos/vcpkg/packages/prism_x64-windows/share/prism/usage -- Performing post-build validation Stored binaries in 1 destinations in 58.6 ms. Elapsed time to handle prism:x64-windows: 21 s Total install time: 21 s The package prism usage: find_package(prism::prism) target_include_directories(main INTERFACE ${PRISM_INCLUDE_DIRS}) more infomation: https://github.com/nocanstillbb/prism 依赖全部安装完毕，我们只需要把所有依赖列到顶层项目上，就可以用vcpkg安装所有依赖，更新所有依赖，也可以利用vcpkg的版本控制功能来管理依赖， 这样git分支只需要保留一个master分支就可以了，所有依赖的版本可以用根目录的vcpkg.json来控制和查看\n", 
+        "url": "\/post\/%E5%88%9B%E5%BB%BAvcpkg%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93\/"
+    },
+    
+    "\/tags\/c\u002b\u002b\/": {
+        "title": "C\u002b\u002b",
+        "tags": [],
+        "content": "", 
+        "url": "\/tags\/c\u002b\u002b\/"
+    },
+    
+    "\/tags\/docker\/": {
+        "title": "Docker",
+        "tags": [],
+        "content": "", 
+        "url": "\/tags\/docker\/"
+    },
+    
+    "\/tags\/qt\/": {
+        "title": "Qt",
+        "tags": [],
+        "content": "", 
+        "url": "\/tags\/qt\/"
+    },
+    
+    "\/tags\/ubuntu\/": {
+        "title": "Ubuntu",
+        "tags": [],
+        "content": "", 
+        "url": "\/tags\/ubuntu\/"
+    },
+    
+    "\/post\/%E4%B8%BAdrone%E5%88%B6%E4%BD%9Cqt%E7%BC%96%E8%AF%91%E6%89%93%E5%8C%85%E7%9A%84ubuntu%E7%8E%AF%E5%A2%83%E7%9A%84docker%E9%95%9C%E5%83%8F\/": {
+        "title": "为drone制作qt编译打包的ubuntu环境的docker镜像",
+        "tags": ["C\u002b\u002b","CI\/CD","Ubuntu","Qt","Docker",],
+        "content": "0.前言 之前我已经写了 Drone+Forgejo+SonarQube 持续集成code review的文档，\n但在之前的文档中，我们并没有自己动手创建docker，都是用别人做好的镜像。\n现在我们需要把开发环境打到docker镜像中，并且把我们的代码库拉到镜像中，做一个基线 ，\n每次Forgejo上触发一个webhook时，我们上Drone基于这个基线，执行指令递归拉取所有git submodule，执行打包脚本。\n1 三种思路 摆在我们面前有三种选择\n编写dockerfile ，从dockerfile生成镜像\n直接运行容器，在容器中安装好所有依赖后，把容器实例转换为镜像\n用现有的系统直接打成docker镜像\n前者的好处是，文件系统分层情况良好，当你有很多镜像时，他们可能可以复用某一些文件层，节约空间和网络流量\n不好的地方就是步骤比较繁琐。后者的好处就是操作简单，但基础镜像的分层信息会丢失。\n因为我们除了Drone构建打包用docker，基本上没其他事了，ubuntu16裸机的这个分层，复用率不高，另外我们只在ci cd的这台电脑上加载这个镜像，没有什么docker集群，所以也不用担心网络流量的问题。所以综合考虑，我们可以考虑使用第二种方式或第三种方式， 由于我硬盘剩余空间比较小，故采用第二种方式\n1 安装docker 由于闫工给我的机器是ubuntu，所以我用apt安装 docker，略\n2.制作开发环境docker 2.1 docker镜像 拉取，启动 拉一个下载量最多的\nroot@drone-ci-8-20:~# docker pull homebrew/ubuntu16.04 这时查看电脑上的镜像可以看到已经拉取的\nroot@drone-ci-8-20:~# docker images REPOSITORY TAG IMAGE ID CREATED SIZE homebrew/ubuntu16.04 latest 6347afdf9148 6 months ago 1.27GB 实例化容器\nroot@drone-ci-8-20:~# docker run -d homebrew/ubuntu16.04 tail -f /dev/null ed1c0b7568119b788b940e21fb1b2d50d63c3e9fe74a48a1dabd0d02987b3a5c tail -f /dev/null 会使这个容器一启动就 一直保持运行，这样我们才有机会进去安装环境\nroot@drone-ci-8-20:~# docker ps -a CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES ed1c0b756811 homebrew/ubuntu16.04 \u0026#34;tail -f /dev/null\u0026#34; 25 seconds ago Up 24 seconds sharp_shtern 查看一下容器，已经有一个状态 为up的容器，说明运行成功了。\n接下来使用 exec -it 以交互的形式执行容器的bash ,\nroot@drone-ci-8-20:~# docker exec -it ed1c /bin/bash linuxbrew@149b1d533469:~$ 看一下系统内核\nlinuxbrew@ed1c0b756811:~$ uname -a Linux ed1c0b756811 5.15.0-84-generic #93-Ubuntu SMP Tue Sep 5 17:16:10 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux linuxbrew@ed1c0b756811:~$ 内核显示为5.15，而实际上ubuntu内核最新的是4.15.142， 两者显示不一样是因为docker container使用的是host的内核\n不过我们只是编译软件，应该没有太多问题，先不管内核版本\n接下来的操作，就和ubuntu裸机安装环境没太多区别了，甚至更简单，因为我们只是要编译软件，不需要安装运行环境，比如驱动\n2.2 安装基础依赖 接下来更新一下我们公司的apt源 ，下载一下闫工之前写的脚本\nsudo -i apt update apt install wget cd ~ wget http://file.deepvision-tech.net/scripts/apt.sh chmod +x apt.sh 因为docker中的网络环境和主机中不一样，所以我们需要修改一下脚本 ，手动注释掉 杭州或北京的脚本 逻辑\n#!/bin/bash # v1.1 # 2023.3.21 # yanqianling@deepvision-tech.com OldSource=`grep ^deb /etc/apt/sources.list|awk \u0026#39;{print $2}\u0026#39;|sort |uniq |sed \u0026#39;/security.ubuntu.com/d\u0026#39;` NewSource=\u0026#34;-apt.deepvision-tech.net/repository/apt-\u0026#34; OsVer=`cat /etc/issue|awk -F\u0026#39;[ .]+\u0026#39; \u0026#39;{print $2}\u0026#39;` IP=`ip a | awk \u0026#39;-F[ .]+\u0026#39; \u0026#39;/255/{print $3\u0026#34;.\u0026#34;$4\u0026#34;.\u0026#34;$5}\u0026#39;|egrep \u0026#39;10.[1,2,8]{1}.\u0026#39;` YELOW=\u0026#39;\\E[1;33m\u0026#39; RED=\u0026#39;\\E[1;31m\u0026#39; RES=\u0026#39;\\E[0m\u0026#39; #case $IP in # \u0026#34;10.2.1\u0026#34;) # cp -f /etc/apt/sources.list /etc/apt/sources.list.bak # echo \u0026#34;\u0026#34; # echo -e \u0026#34;${YELOW} Old apt sources backup to [/etc/apt/sources.list.bak] ${RES}\u0026#34; # sed -i \u0026#34;s#${OldSource}#http://bj${NewSource}${OsVer}/#g\u0026#34; /etc/apt/sources.list # echo -e \u0026#34;${YELOW} new apt source replaced by [http://bj${NewSource}${OsVer}] ${RES}\u0026#34; # echo -e \u0026#34;${YELOW} Please run command [sudo apt update],Let config become effective ${RES}\u0026#34; #;; # \u0026#34;10.1.1\u0026#34;|\u0026#34;10.1.8\u0026#34;) cp -f /etc/apt/sources.list /etc/apt/sources.list.bak echo \u0026#34;\u0026#34; echo -e \u0026#34;${YELOW} Old apt sources backup to [/etc/apt/sources.list.bak] ${RES}\u0026#34; sed -i \u0026#34;s#${OldSource}#http://hz${NewSource}${OsVer}/#g\u0026#34; /etc/apt/sources.list echo -e \u0026#34;${YELOW} new apt source replaced by [http://hz${NewSource}${OsVer}] ${RES}\u0026#34; echo -e \u0026#34;${YELOW} Please run command [sudo apt update],Let config become effective ${RES}\u0026#34; # ;; # *) # echo -e \u0026#34;${YELOW} ${IP} ${RES}\u0026#34; # echo -e \u0026#34;${YELOW}YOU IP Error ${RES}\u0026#34; #esac ~ ~ ~ 例如我操作的这个机器是在杭州的，我就把脚本中的case 语句注释掉，只留下杭州这一段逻辑\n然后执行它\n./apt.sh 替换完源后 ，更新一下\napt update 然后开始安装编译环境\nsudo apt install -y liblapack-dev sudo apt install -y libjpeg-dev libpng12-dev libtiff-dev libjasper-dev libdc1394-22-dev sudo apt install -y libva1 libva-dev libva-drm1 libva-egl1 libva-glx1 sudo apt install -y libswscale-dev libavcodec-dev libavformat-dev sudo apt install -y libssh2-1 zlib1g-dev sudo apt install -y libgl1-mesa-dev libglu1-mesa-dev freeglut3-dev libsndio-dev sudo apt install -y python3-pip pip3 install openpyxl==2.6.4 pip3 install xlrd==1.2.0 sudo apt install -y libcap-dev libx11-dev libxext-dev libgtk-3-dev libglade2-0 libglade2-dev libpcap0.8 libcap2 ethtool sudo apt install -y libsndio-dev sudo apt install -y libxcb-keysyms1-dev libxcb-image0-dev libxcb-shm0-dev libxcb-icccm4-dev libxcb-sync0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-randr0-dev libxcb-render-util0-dev libfontconfig1-dev libfreetype6-dev libx11-dev libxext-dev libxfixes-dev libxi-dev libxrender-dev libxcb1-dev libx11-xcb-dev libxcb-glx0-dev x11vnc xauth build-essential mesa-common-dev libglu1-mesa-dev libxkbcommon-dev libxcb-xkb-dev libxslt1-dev libgstreamer-plugins-base0.10-dev libxkbcommon-x11-0 sudo apt-get install build-essential libgli-mesa-dev libglul-mesa-dev freeglut3-dev sudo apt install -y libxcb-keysyms1-dev libxcb-image0-dev libxcb-shm0-dev libxcb-icccm4-dev libxcb-sync0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-randr0-dev libxcb-render-util0-dev libfontconfig1-dev libfreetype6-dev libx11-dev libxext-dev libxfixes-dev libxi-dev libxrender-dev libxcb1-dev libx11-xcb-dev libxcb-glx0-dev x11vnc xauth build-essential mesa-common-dev libglu1-mesa-dev libxkbcommon-dev libxcb-xkb-dev libxslt1-dev libgstreamer-plugins-base0.10-dev libxkbcommon-x11-0 2.3 安装Qt 2.3.1 方式一，编译源码安装 安装qt 5.12.6\n传统的方式是 在有gui的环境下运行.run的安装包， 但docker 里的ubuntu默认是没有图形界面的。\n所以直接下载官网的源码编译，安装\nwget https://download.qt.io/archive/qt/5.12/5.12.6/single/qt-everywhere-src-5.12.6.tar.xz tar -zxvf qt-everywhere-src-5.12.6.tar.xz cd qt-everywhere-src-5.12.6 ./configure make -j8 make install # 如果出现问题make confclean 清除配置信息 重新编译 安装完后会有 /local/Qt-5.12.6/这个路径， 把qmake复制到/usr/bin ,然后键入 qmake -v 查看是否编译安装正常\nlinuxbrew@ed1c0b756811:/usr$ qmake -v QMake version 3.1 Using Qt version 5.12.6 in /usr/local/Qt-5.12.6/lib 因为我们只是用docker来构建，不需要启动图形界面，所以这种可以减少不必要的依赖安装，但编译时长较长，如果不想编译源码的话，可以使用另一种方案，docker宿主机上安装桌面环境\n2.3.2 方式二，docker挂载宿主机图形相关卷启动 sudo apt install ubuntu-desktop xhost local:root 使用vnc远程到宿主机后，然后参照这个设置，把docker挂载上显示相关的卷，\ndocker run -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -v /dev/shm:/dev/shm --device /dev/dri 就可以在docker容器中打开 run安装包安装了, 如果还打不开run安装包，可以尝试指定 不依赖硬件的平台\nqt-opensource-linux-x64-5.12.6.run -platform minimal 或\nqt-opensource-linux-x64-5.12.6.run -platform offscreen p latform 的可选项\ndirectfbegl，directfb，eglfs，linuxfb，minimal，minimalegl，offscreen，wayland-egl，wayland，xcb。\n以及这个， 使用脚本，静默安装 installation - Silent install Qt run installer on ubuntu server - Stack Overflow\n2.4 克隆源码构建 全安装后， 克隆一下源码\nmkdir -p ~/source/repos cd ~/source/repos/ git clone http://10.1.8.8/AL/dv-detector.git git submodule update --init --recursive 然后就可以运行打包脚本构建了\n./pkg.sh 1.1.1.1 tst_build 2.5 把现有docker container 转换为docker image 删除掉不需要的文件，尽可能减少容器占用的空间，然后再打镜像\nroot@drone-ci-8-20:~# docker ps -a CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES ed1c0b756811 homebrew/ubuntu16.04 \u0026#34;tail -f /dev/null\u0026#34; 25 seconds ago Up 24 seconds sharp_shtern docker commit ed1c0b756811 dv_detector:master1.1.1.1 因为我们目前没有搭建docker 私有仓库，所以一般通过导入导出 docker 镜像到文件系统传输\n导出docker 镜像到文本系统\ndocker save -o myimage_exported.tar dv_detector:master1.1.1.1 从文件系统导入\ndocker load -i myimage_exported.tar 3 配置drone，执行docker runner Overview | Drone\n官网之述备矣\nkind: pipeline type: docker name: build clone: disable: true steps: - name: pkg image: dv_detector:master1.1.1.1 environment: DRONE_BRANCH: $DRONE_BRANCH PKG_VERSION: \u0026#34;1.1.1.2\u0026#34; PKG_NAME: \u0026#34;测试打包\u0026#34; settings: detach: false entrypoint: [\u0026#34;\u0026#34;] commands: - cd ~/source/repos/dv-detector - git reset --hard - git clean -xdf - git pull origin master - git submodule update --recursive - bash -c \u0026#34;./pkg.sh $PKG_VERSION $PKG_NAME\u0026#39;\u0026#39;_$(git rev-parse --short=6 HEAD)\u0026#34; 最终打出的包放在容器中没后续动作，因为本文只做技术验证\n如果需要，只需要在comands里加额外的处理就可以了\nend\n100. 附录:Docker 常用命令 100.1 容器生命周期管理： 创建一个容器：docker run \u0026lt;image_name\u0026gt; 启动容器：docker start \u0026lt;container_name\u0026gt; 停止容器：docker stop \u0026lt;container_name\u0026gt; 重启容器：docker restart \u0026lt;container_name\u0026gt; 删除容器：docker rm \u0026lt;container_name\u0026gt; 查看运行中的容器：docker ps 查看所有容器（包括停止的）：docker ps -a 进入容器内部命令行：docker exec -it \u0026lt;container_name\u0026gt; /bin/bash 100.2 镜像操作： 搜索镜像：docker search \u0026lt;image_name\u0026gt; 下载镜像：docker pull \u0026lt;image_name\u0026gt; 列出本地镜像：docker images 删除本地镜像：docker rmi \u0026lt;image_name\u0026gt; 100.3容器日志和信息： 查看容器日志：docker logs \u0026lt;container_name\u0026gt; 查看容器详细信息：docker inspect \u0026lt;container_name\u0026gt; 100.4容器文件传输： 从容器复制文件到本地：docker cp \u0026lt;container_name\u0026gt;:\u0026lt;src_path\u0026gt; \u0026lt;dest_path\u0026gt; 从本地复制文件到容器：docker cp \u0026lt;src_path\u0026gt; \u0026lt;container_name\u0026gt;:\u0026lt;dest_path\u0026gt; 100.5构建镜像： 基于 Dockerfile 构建镜像：docker build -t \u0026lt;image_name\u0026gt;:\u0026lt;tag\u0026gt; \u0026lt;path_to_Dockerfile\u0026gt; 100.6Docker Compose： 使用 Docker Compose 启动多个容器：docker-compose up 停止 Docker Compose 启动的容器：docker-compose down 100.7网络操作： 列出 Docker 网络：docker network ls 创建 Docker 网络：docker network create \u0026lt;network_name\u0026gt; 100.8清理： 清理无用容器：docker container prune 清理无用镜像：docker image prune 清理无用卷（数据卷）：docker volume prune ", 
+        "url": "\/post\/%E4%B8%BAdrone%E5%88%B6%E4%BD%9Cqt%E7%BC%96%E8%AF%91%E6%89%93%E5%8C%85%E7%9A%84ubuntu%E7%8E%AF%E5%A2%83%E7%9A%84docker%E9%95%9C%E5%83%8F\/"
+    },
+    
+    "\/post\/forgejo%E5%8A%A0drone%E5%8A%A0sonarqube%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90cpp%E7%9A%84code_review\/": {
+        "title": "forgejo加drone加sonarQube持续集成cpp的code_review",
+        "tags": ["C\u002b\u002b","CI\/CD",],
+        "content": "0 安装 Drone+ Forgejo(Gitea) +SonarQube 略，这部分闫工已经完成了，\n只需要知道，在部署的时候， Drone 已经设置了了Forgejo(Gitea) 产生的auth2 的token， 通过webhook，可以通过Forgejo(Gitea) 事件触发Drone里的动作\n下面是这几个服务的公司内部站点\nForgejo.\nDrone CI\nSonarQube\n1 How It Works 1.1 SonarQube 首先，单独一个 sonarQube就可以创建扫描项目，配置项目，再在代码所在在设备上安装一个扫描器，按项目提示的参数，对本地代码扫描， 就会把扫描的结果发到服务上，然后可以在web仪盘显示扫描的结果。 但是我们想要自动化这个过程\n1.2 Forgejo 2022年8月左右 德国某一非营利组织 从gitea fork 出 forgejo， 原因是原gitea的社区管理队在没有经过社区的同意下，把管理权转交给某营利性组织\nForgejo 职能和 Gitlab一样 ,用于源码的版控，同时通过webhook， 把git事件 通过http post到Drone服务\n1.3 Drone Drone订阅了Forgejo的webhook事件，\n并且能从Forgejo 上的Git repository的根目录获取配置文件， 结合 Webhook事件和Git repository的根目录获取配置文件，执行事件， 执行事件的具体逻辑，则被称为 Drone Runner.\nRunner有又exe Runner 和docker Runner， 顾名思意，就是执行命令行动作，或执行docker 动作\n如果把Forgejo 的Webhook事件看作Qt中的信号的话， 那Drone就是槽函数所在的对象，Runner是具体的槽函数\n1.4 组合起来协作 1.在服务搭建的时候，Forgejo的auth2 token已经设置给了Drone,所以当打开Drone的登录界面时，会自动用使用forgejo的token通过open connect id的方式登录。并且Drone登录后可以通过主动点击同步按钮同步Forgejo上的项目(当前用户参与的项目)\n2.用户上传代码到 Forgejo， 并同步到Drone\n3.用户在Git 代码库中添加drone的配置和sonarQue的配置\n4.当用户的git 动作推送到 Forgejo,触发Drone上的动作执行SonarQube扫描，上传\n5.用户在 sonarQube上可以看到代码质量报告， 以及代码修建的建议\n2 从Gitlab迁移项目到 Forgejo(Gitea) 2.1 在Gitlab上创建一个access token 点击绿色的创建按钮后，页面顶部会显示token， 复制保存起来，因为页面刷新后就看不到这串token了\n2.2 在Forgejo 上执行迁移 使用公司的id登录 点击 右上方的 +号按钮，选择迁移外部仓库 ， 选择gitlab , 写入gitlab repository的 url 和 步骤2.1生成的access token\n注意， url 需要是http的并且可以用git clone 克隆的那个地址，使用ssh的地址会提示不合法\n迁移成功后， gitlab里的的access token就可以删除了，如果还想继续迁移，则可以保存一下\n3.3 同步到Drone 这时打开Drone , 因为服务已经配置了auth2，所以如果drone的界面没有登录的话， 会默认跳转到forgejo 的帐号登录，我们只需要授权一下。 登录成功后点击右上角的同步按钮， 应该可以看到仪表盘上多了一个刚才迁移过来的项目。\n如果点了同步后还没有看到，需要检查一下，是否之前已经有用其他账号登录过Drone了，如果有的话，登出后，重登一下，让Drone和Forgejo使用的是同一个账户。\n因为我的这个账号huangbinbin,同时也代码库root/dv-01的 协作者，所以我也会把root/dv-01的项目同步过来。\n同理，我们公司有一个专门用于查看ci/cd 仪表盘的公用账号，所以 需要在我们的项目上，也把它添加为协作者。\n到这里， 项目已经从Gitlab 迁移到Forgejo上， 并且同步到Drone上了， 但还没有配置CI/CD的任务\n3. 配置CI/CD的任务 3.1 复用本地Git Repository 如果迁移的库，你之前已经有拉取到本地了，可以直接使用本地的库，只需要加上remote就行\ngit remote add gitea git@10.1.8.8:huangbinbin/dv_ui.git 可以使用以下命令查询当前git repository的remote配置\n$ git remote -vv gitea http://10.1.8.8/root/dv_ui.git (fetch) gitea http://10.1.8.8/root/dv_ui.git (push) origin git@gitlab.deepvision-tech.com:dv-detector/dv_ui.git (fetch) origin git@gitlab.deepvision-tech.com:dv-detector/dv_ui.git (push) 推送的时候 指定remote就行了\ngit push gitea 如果决定重新从forgejo拉一个新的仓库也可以， 那样的话可以直接跳过3.1步骤\n3.2 Drone 的Runner配置 在代码库根目录创建一个.drone.yml配置， 这将在 Forgejo中的代码库触发webhook时，执行一个docker runner\n所以需要指定docker镜像sonarsource/sonar-scanner-cli，\ncommands 里的命令，会在正确的地方拉执行，\n更多配置信息可以参阅 sonarsource/sonar-scanner-cli - Docker Image | Docker Hub\nkind: pipeline type: docker name: 代码分析 steps: - name: 代码分析 image: sonarsource/sonar-scanner-cli pull: always commands: - sonar-scanner 目前还没有制作编译打包的环境，steps里目前只有代码分析，没有编译相关的动作\n然后在Drone上把dv_ui项目激活\n并设置配置文件为.drone.yml\n点击一下save changes\n3.3 SonarQube的扫描配置 3.3.1 在SonarQube上创建一个扫描代码库的项目 由于我刚才添加的代码分析的库是dv_ui，所以sonarQube也是以dv_ui命名\n主分支名称\n复制下token sqp_8e47cccd99d8d268006064984f9ef3884a1ce55c\n后面的步骤是下载扫描器， 执行扫描命令， 我们不需要走这一流程，因为已经有封装好的docker镜像替我们执行，我们只要把token配置给Drone就行了。(放到git 代码库根目录，Drone会从Forgejo取)\n3.3.2 根据SonarQube项目信息添加配置到Git库根目录 在代码库根目录创建一 个文件sonar-project.properties\nsonar.host.url=http://10.1.8.13:9000 sonar.login=sqp_8e47cccd99d8d268006064984f9ef3884a1ce55c sonar.projectKey=dv_ui sonar.projectName=dv_ui sonar.projectVersion=1.0 sonar.sources=. sonar.language=c++ sonar.sourceEncoding=UTF-8 sonar.cxx.file.suffixes=.cxx,.cpp,.cc,.c,.hxx,.hh,.handled 把4.3.1步骤得到的token配置进去， 除了token之外，其他的参数 也按需填写就行\n更多参数可以参阅github wiki\n在步骤4中，我把两个配置文件推送到了master分支，所以ci 分析的也是master分支， 实际上任何分支都可以分析，只要把这两个文件提交到相关分支上。 也可以在webhook上设置过滤规则，使有这两个配置文件的任何不生效，后面会讲到\n3.4 推送配置到Forgejo 完成4.1 / 4.2 / 4.3的步骤后，我们在dv_ui代码库的根目录里，已经添加了两个文件，这时我们把他推送到Forgejo\nDrone里的项目将会被激活， Forgejo里的代码库，也会自动添加webhook.\ncd path/to/dv_ui git add sonar-project.properties .drone.yml git commit -m \u0026#34;cd - add sonar \u0026amp; drone configs\u0026#34; git push gitea ps: gitea 这个remote是在步骤4.1里添加的， 因为本地有两个remote，所以需要指定一个推送，如果只有一个remote可以省略\n推送完后， Drone应该已经监听到webhook的变化，进行相关的运行\n3.4.1 到Drone仪表盘观察Runner 运行过程 这时刷新Drone的页面 应该可以看到 任务已经进行中了\n3.4.2 到Forgejo项目上 查看webhook变化 推送过后，可以看到Forgejo上的dv_ui项目，已经生成了一条webhook规则\n可以点击进去配置 webhook的具体规则 ，，包括触发的条件，\n分支的过滤，\n甚至ci执行的过程，post参数，和响应的结果\nps 在上图右上有一个测试推送按钮，可以用来模拟一个webhook的Post信号，触发Drone里的runner执行，方便测试runner\n3.4.3 到SonarQube查看 代码质量报告 可以在sonarQube上看到质量报告\n因为我们还没有配置c++的规则，所以没有c++的质量问题，都是python的\npy是免费功能，所以项目默认状态就是可用的，c++需要额外的配置\n可见，配置好后，我们只需要提交代码， 三个服务即会联合协作，最终把代码质量报告呈现给我们\n4 使用C++ sonarQube插件 4.1 为什么使用插件 sonarQube 官方免费支持了大多数语言，但对于c++分析，但是是商业支持\n好在c++有开源的分析插件，而且内置了很多规则，还支持使用正则或XPath扩展自定义规则\n4.2 下载安装插件 可以从github release 页面下载最新版本的插件和 sslr（Semantic Source Line Reader）工具\n接着把插件放sonarQube/extensions/plugins/， 重启sonarQube 就会自动加载插件\n在闫工的帮助上， c++插件已经安装到sonarQube上面了\n服务启动后，从web端访问就可以看到c++/c的插件\n4.3 配置插件 4.3.1 启用规则 默认使用的内置配置规则 Sornar way ，启用的规则是0条，是不可以修改的，如果需要修改，要基于Sonar way创建一个配置，再做修改\n点击展开（我觉得应该是翻译问题，实际上是扩展才对，会把原来的项目的规则继承过来）\n点击deepvision-cxx 后面的齿轮，激活更多规则\n有内置的规则有很多，可以按多个维度添加过滤器过滤，显示出来后，再批量修改， 这里我先把c++的规则全部添上，总共5800+条c++规则\n4.3.2 分配规则给项目 然后在之前的dv_ui 项目上配置c++规则为\n再次提交代码就会重新使用 deepvision-cxx分析\n4.3.3 增加自定义规则 目前， 添加定义规则 主要有有3种方式\n有三种方法可以将编码规则添加到SonarQube： 在Java中编写一个SonarQube插件，该插件使用SonarQube API添加新规则 直接通过 SonarQube Web 界面添加 XPath 规则 导入由独立运行的工具生成的一般问题报告 因为我们使用的是开源的c++分析插件，相当于使用了第一种方式了，在这基础上扩展的话，我们使用第二种方式,利用插件提供的模板进行扩展\n筛选出可用的模板\n可以看到前面的规则都是特定于某种分析器的， 这些规则我们不需要管，应该是用外部分析器生成报告，导入时需要用到的模板，更多阅读\n我们用得到的就最后面这4项\n后面这四项，其中 第一项是xpath的规则，需要配合 5.2步骤中下载的sslr 工具 一起对规则进行测试 ，\n其他三条是正则规则， 可以使用在线正则工具测试\n4.3.3.1 XPath query规则 Track breaches of an XPath rule 5.3.3.1.1 XPath测试 xpath主要用来处理xml，和xml扩展的语言，如html, xaml， 但是通用sslr工具可以把代码分析成 AST树，也就是抽象语法树，用xml来描述代码，再用xpath分析 xml document\n首先需要安装java， 使用java启动 sslr工具\njava -jar cxx-sslr-toolkit-2.1.2.512.jar 把要测试的代码复制到source code区域， 点击parse source code， 右侧就会把AST树显示出来\n在下方写测试的query语句， 点下方评估按钮，就会左侧命中的源码高亮，在右侧把命中的AST节点高亮。\n上图是我简单的写了一个查询语句 查询 所有长度小于3的标识符\n//IDENTIFIER[string-length(@tokenValue)\u0026lt;3] ps: 点击左侧源码，右侧AST树也自动定位到原码对应的结点位置 ，反过来点击右侧节点， 右侧源码也会自动定位到相应的位置。\nXPath强大的地方在于，他可以很方便的把 xml各层级的属性 联合起来做查询,这点正则是不那么容易的\n更多XPath的用法可以在网上找一下资料，例如 XPath 实例 | 菜鸟教程 (runoob.com)\n4.3.3.1.2 XPath测试 测试完我们直接把代码添加到规则里\n点击\n滚动到最下方后，点创建按钮\n点击创建后 多出一条规则\n此时规则还没有激活， 再点击一下激活\n激活后就可以在规则里查询到了，这表示，规则已经在 deepviosn_cxx的配置里\n4.3.3.2 正则表达式匹配规则 Track comments matching a regular expression\nTrack files matching a regular\nTrack lines matching a regular expression\n正则处理字符串由什么字符结构组成而成比较强，\n但检测字符的长度、 多层级节点联合检测比较乏力\n正则模板的创建与XPath 流程上没什么不一样， 可以直接参照步骤5.3.3.1.2\n模板参数有所差异，但是都是比较简单的参数，按字面理解就行\n主要说一下这三条参数的区别，都是正则规则，区别在哪里。\n第一条， 只匹配注释， 例如匹配 // TODO:\n第二条， 一个文件，只要匹配过一次就只报一个检测规则冲突，\n第三条，一个文件，如果有多行匹配命中 ，每一个匹配命中的行都会提示一个检测规则冲突\n4.4 总结 具体的规则，还是需要根据公司的代码规则来添加\n一个思路是启用所有的代码，分析代码后， 按规则分类，看一下哪一些规则不适用，把他们停用掉。\n再看一下哪一些是我们公司需要添加的规则， 把他们添加上去，测试，\n这样就能只做少量工作，完成c++规则的定制了了\n", 
+        "url": "\/post\/forgejo%E5%8A%A0drone%E5%8A%A0sonarqube%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90cpp%E7%9A%84code_review\/"
+    },
+    
+    "\/post\/cpp%E8%B7%A8%E5%B9%B3%E5%8F%B0%E9%A1%B9%E7%9B%AE%E5%9C%A8windows%E4%B8%8A%E7%9A%84%E6%96%87%E6%9C%AC%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98\/": {
+        "title": "cpp跨平台项目在windows上的文本编码问题",
+        "tags": ["C\u002b\u002b","Windows",],
+        "content": "1.背景 linux系统和mac os默认使用utf8编码，windows系统上通常是跟随系统设置，如果系统选择为中文地区的话，默认为GBK编码。\nwindows 10 1703开始，支持把windows编码设置为utf8 。\nIDE上一般也是默认是这个配置，但是IDE可以选择编码源码保存为什么格式。\n2.跨平台项目遇到的问题 由于linux和windows共用一个代码库，所以源码都使用同一编码格式，在我的情况，我把源码保存为utf8，并在windows上把ide配置为 utf8 不带BOM， FL 格式\nBOM，windows字符前加上额外字节的信息，用来让windows认识字符串属于哪种编码\nFL , 换行符windows上是CRFL, Mac os是CR ，Linux是FL\n同时windows上把编译器设置为输出utf8 格式，\nqmake使用 CONFIG += utf8_source 配置，它会根据编码器自动加上utf8的编码选项\n至此为止，世界如此美好， 一切显示正常，甚至还能用emoji 表情字符\n直到打开文件发现打不开， 调用系统命令行无故执行错误 ,控制台显示乱码\n3.解决方法 3.1 使用windows api转换utf8为gbk #include \u0026lt;sstream\u0026gt; #include \u0026lt;locale\u0026gt; #include \u0026lt;codecvt\u0026gt; inline std::string utf8_to_gbk(const std::string\u0026amp; str) { std::wstring_convert\u0026lt;std::codecvt_utf8\u0026lt;wchar_t\u0026gt;\u0026gt; conv; std::wstring tmp_wstr = conv.from_bytes(str); //GBK locale name in windows const char* GBK_LOCALE_NAME = \u0026#34;.936\u0026#34;; std::wstring_convert\u0026lt;std::codecvt_byname\u0026lt;wchar_t, char, mbstate_t\u0026gt;\u0026gt; convert(new std::codecvt_byname\u0026lt;wchar_t, char, mbstate_t\u0026gt;(GBK_LOCALE_NAME)); return convert.to_bytes(tmp_wstr); } inline std::string gbk_to_utf8(const std::string\u0026amp; str) { //GBK locale name in windows const char* GBK_LOCALE_NAME = \u0026#34;.936\u0026#34;; std::wstring_convert\u0026lt;std::codecvt_byname\u0026lt;wchar_t, char, mbstate_t\u0026gt;\u0026gt; convert(new std::codecvt_byname\u0026lt;wchar_t, char, mbstate_t\u0026gt;(GBK_LOCALE_NAME)); std::wstring tmp_wstr = convert.from_bytes(str); std::wstring_convert\u0026lt;std::codecvt_utf8\u0026lt;wchar_t\u0026gt;\u0026gt; cv2; return cv2.to_bytes(tmp_wstr); } 每当需要和系统交互时，先把utf8转换为gbk ，例如 打开文件，调用系统命令行\n如果调用系统管道，返回了字符串，分别调用子进程，重定向了字符回显，也需要返回了字符串是gbk，要在程序里转换为utf8\n这种方式比较麻烦，但也比较通用，只要是字符串就能转\n3.2 使用 c++17 filesystem 解决文件路径 filesystem在gcc 5.4仍然属于实验阶段的功能，所以在gcc 5.4中，它的名称空间和头文件位置多了一级experimental\n//gcc 5.4 #include \u0026lt;experimental/filesystem\u0026gt; int main() { std::experimental::filesystem::path ..... } 如果是gcc 7 则需要去掉experimental这级 名称\n#include \u0026lt;filesystem\u0026gt; void testFilePath(std::string filename) { std::ifstream file(filename); if(file.good()) std::cout \u0026lt;\u0026lt; filename \u0026lt;\u0026lt; \u0026#34; 存在\u0026#34;\u0026lt;\u0026lt; std::endl; else std::cout \u0026lt;\u0026lt; filename \u0026lt;\u0026lt; \u0026#34; 不存在\u0026#34;\u0026lt;\u0026lt; std::endl; } int main() { //全是ascii testFilePath(\u0026#34;d:/privatekey.pem\u0026#34;); testFilePath(\u0026#34;d:/数据判定.csv\u0026#34;); std::filesystem::path path = std::filesystem::u8path(\u0026#34;d:/数据判定.csv\u0026#34;); std::ifstream file(path); if(file.good()) std::cout \u0026lt;\u0026lt; path \u0026lt;\u0026lt; \u0026#34; 存在\u0026#34;\u0026lt;\u0026lt; std::endl; else std::cout \u0026lt;\u0026lt; path \u0026lt;\u0026lt; \u0026#34; 不存在\u0026#34;\u0026lt;\u0026lt; std::endl; } 上面的代码如果使用utf8编译选项，且源码保存为utf8,且在代码页设置为utf8的控制台上运行，你将看到输出\nd:/privatekey.pem 存在 d:/数据判定.csv 不存在 \u0026#34;d:/�����ж�.csv\u0026#34; 存在 这种方式可以十分方便的兼容多个平台，但std::filesystem::path只有c++17才有，并且，不能直接和std::string转换，\n但是上面的示例代码使用std::cout 输出是正常的，只是被加上了引号， 说明可以使用流的方式写入std::string里，只是可能会被加上引号。\n3.3 使用windows api解决 gbk系统环境控制台显示程序输出乱码 这种情况，可以使用3.1中的那种文件转换utf8编码，但是如果不小心把gbk转为gbk， 程序就会崩溃， 打印子进程回显时踩了一次坑\n可以使用windows设置程序输出到控制台的代码页\n#ifdef _MSC_VER #define _AMD64_ #include \u0026lt;ConsoleApi2.h\u0026gt; #include \u0026lt;winnls.h\u0026gt; #endif int main(int argc, const char** argv) { #ifdef _MSC_VER SetConsoleOutputCP(CP_UTF8); SetConsoleCP(CP_UTF8); #endif } ", 
+        "url": "\/post\/cpp%E8%B7%A8%E5%B9%B3%E5%8F%B0%E9%A1%B9%E7%9B%AE%E5%9C%A8windows%E4%B8%8A%E7%9A%84%E6%96%87%E6%9C%AC%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98\/"
+    },
+    
+    "\/tags\/windows\/": {
+        "title": "Windows",
+        "tags": [],
+        "content": "", 
+        "url": "\/tags\/windows\/"
+    },
+    
+    "\/about\/": {
+        "title": "About me",
+        "tags": [],
+        "content": " c++开源项目 prism 的作者\nprism 是一个静态反射框架，仅依赖于stl，支持扩展\nprismQt 是基于prism的Qt扩展，它他可让qt开发者使用c++和qml像c#和xmal一样,方便的mvvm\nprismQt 仅是prism的反射应用的其中一个位面\n目前prism仅开发了json以及qml和c++类的双向绑定\n我正在计划推出基于prism的sql ORM, 还有yaml的序列化的扩展\n我的职业生涯规划是全平台客户端\n工作经历 14.09-18.03 泉州 电气工程师 18.03-21.03 广州 windows桌面开发 21.03-22.11 北京 windows桌面开发 21.03-22.11 北京 windows/linux桌面开发 技能点 C# XAML WPF C++ QML Qt Quick Linux Windows ", 
+        "url": "\/about\/"
+    },
+    
+    "\/categories\/": {
+        "title": "Categories",
+        "tags": [],
+        "content": "", 
+        "url": "\/categories\/"
+    },
+    
+    "\/tags\/ci\/cd\/": {
+        "title": "CI\/CD",
+        "tags": [],
+        "content": "", 
+        "url": "\/tags\/ci\/cd\/"
+    },
+    
+    "\/search\/": {
+        "title": "Search Results:",
+        "tags": [],
+        "content": "", 
+        "url": "\/search\/"
+    },
+    
+}
+</script>
+<script src="/js/lunr.min.js"></script>
+<script src="/js/search.js"></script>
+
+
