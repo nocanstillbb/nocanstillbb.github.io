@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WSL2 on hbb&#39;s blog</title>
+    <link>/tags/wsl2/</link>
+    <description>Recent content in WSL2 on hbb&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 28 Dec 2024 12:48:29 +0800</lastBuildDate><atom:link href="/tags/wsl2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>wsl2设置网络桥接到物理网卡</title>
+      <link>/post/wsl2%E8%AE%BE%E7%BD%AE%E7%BD%91%E7%BB%9C%E6%A1%A5%E6%8E%A5%E5%88%B0%E7%89%A9%E7%90%86%E7%BD%91%E5%8D%A1/</link>
+      <pubDate>Sat, 28 Dec 2024 12:48:29 +0800</pubDate>
+      
+      <guid>/post/wsl2%E8%AE%BE%E7%BD%AE%E7%BD%91%E7%BB%9C%E6%A1%A5%E6%8E%A5%E5%88%B0%E7%89%A9%E7%90%86%E7%BD%91%E5%8D%A1/</guid>
+      <description>0. 前言 前几个月已经探索了通过x11 转发, 在windows与mac os上通过ubuntu docker 镜像,运行具有gpu加速的ubuntu gui程序
+但是在windows上有更直接的选择, 那就是通过wsl2 运行ubutnu的linux 子系统, 这种方式,可以通过在docker desktop中设置与具体的wsl2 发行版集成, 让windows和wsl2 发行版使用同一个docker socket,共享一个docker engine
+docker 也更建议把docker与wsl2一起使用, 此方案应有更多的性能红利和社区支持红利
+由于我将在windows上通过wsl2 ubuntu运行的程序会使用udp广播来发现局域网中的设备,所以不能使用wsl默认的nat网络,否则udp广播刚不能传达到局域网的设备端. 所以我探索了设置wsl 网络桥接物理网卡的方式,并记录在此,留痕
+此方法需要
+使用hyper-v 创建虚拟网络 配置wsl 使用 虚拟网络 限制
+终于目前只在win11上使用 win10上还没测试,所以不保证在windows上可以成功 如果将来在windows 10测试验证, 将会更新些文档
+1.windows家族版安装hyper-v 通常安装hyper-v的方式是在程序中打开windows功能,选中hyper-v,确定安装,不过如果你是windows 家庭版,那么在打开windows功能的界面中不会有hyper-v的选项,需要用以下方式安装
+创建 hyper-v.bat
+1 2 3 4 5 6 pushd &amp;#34;%~dp0&amp;#34; dir /b %SystemRoot%\servicing\Packages\*Hyper-V*.mum &amp;gt;hyper-v.txt for /f %%i in (&amp;#39;findstr /i . hyper-v.txt 2^&amp;gt;nul&amp;#39;) do dism /online /norestart /add-package:&amp;#34;%SystemRoot%\servicing\Packages\%%i&amp;#34; del hyper-v.</description>
+    </item>
+    
+    <item>
+      <title>windows_wsl2_nvidia-docker2镜像记录</title>
+      <link>/post/windows_wsl2_nvidia-docker2%E9%95%9C%E5%83%8F%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Sun, 20 Oct 2024 12:48:29 +0800</pubDate>
+      
+      <guid>/post/windows_wsl2_nvidia-docker2%E9%95%9C%E5%83%8F%E8%AE%B0%E5%BD%95/</guid>
+      <description>0. 写在前面 上上周我尝试了使用mac os 通过x11转发,显示从ubuntu docker中启动的gui程序,并使用ubuntu docker中的输入法的实践
+上周我尝试了在windows上在其基础上加入了nvidia-docker2的步骤,也成功了,不过没时间记录,于是今日写此文档记录
+不管是mac os还是windows上所做的这些实验,都是为了在docker中运行我的开源的yolo8辅助训练软件label-image
+1. 前置条件 1.1 wsl 2 由于windows上的ubuntu docker container运行在wsl2可以支持得更好,也是nvidia-docker2的充分必要条件,所以如果你安装的wsl发行版本不是wsl版本的话,需要先安装一个wsl2的docker-desktop
+安装成功后可以命令行查看
+1 2 3 PS C:\WINDOWS\system32&amp;gt; wsl --list -v NAME STATE VERSION * docker-desktop Running 2 wsl2的安装方法,随便搜索一下就有很多,略
+需要在docker-desktop中启用wsl2, 如果设置成功的放在, setting-&amp;gt;resouces中显示如下图
+1.2 nvidia-docker2安装 https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html
+参照些文,如此如此,这般这般,就好了,这里不再展开,没安装成功的再努力百度一下
+相比linux下的步骤简单, 安装完后在docker-desktop中重启一下docker就可以生效
+如果是在linux下, 需要
+sudo systemctl reload-daemon &amp;amp;&amp;amp; sudo systemctl restart docker by the way ,
+linux的docker的daemon.json在/etc/docker/daemon.json
+widnows的docker的daemon.json在~/.config/docker/daemon.json
+设置代理会解决很多镜像拉不下来的问题
+1 2 3 4 5 6 7 8 9 10 11 12 { &amp;#34;registry-mirrors&amp;#34;: [ &amp;#34;https://dockerhub.</description>
+    </item>
+    
+  </channel>
+</rss>

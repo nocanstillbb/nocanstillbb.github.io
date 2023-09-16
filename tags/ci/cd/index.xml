@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CI/CD on hbb&#39;s blog</title>
+    <link>/tags/ci/cd/</link>
+    <description>Recent content in CI/CD on hbb&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language><atom:link href="/tags/ci/cd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>为drone制作qt编译打包的ubuntu环境的docker镜像</title>
+      <link>/post/%E4%B8%BAdrone%E5%88%B6%E4%BD%9Cqt%E7%BC%96%E8%AF%91%E6%89%93%E5%8C%85%E7%9A%84ubuntu%E7%8E%AF%E5%A2%83%E7%9A%84docker%E9%95%9C%E5%83%8F/</link>
+      <pubDate>Wed, 27 Sep 2023 18:48:29 +0800</pubDate>
+      
+      <guid>/post/%E4%B8%BAdrone%E5%88%B6%E4%BD%9Cqt%E7%BC%96%E8%AF%91%E6%89%93%E5%8C%85%E7%9A%84ubuntu%E7%8E%AF%E5%A2%83%E7%9A%84docker%E9%95%9C%E5%83%8F/</guid>
+      <description>0.前言 之前我已经写了 Drone+Forgejo+SonarQube 持续集成code review的文档，
+但在之前的文档中，我们并没有自己动手创建docker，都是用别人做好的镜像。
+现在我们需要把开发环境打到docker镜像中，并且把我们的代码库拉到镜像中，做一个基线 ，
+每次Forgejo上触发一个webhook时，我们上Drone基于这个基线，执行指令递归拉取所有git submodule，执行打包脚本。
+1 三种思路 摆在我们面前有三种选择
+编写dockerfile ，从dockerfile生成镜像
+直接运行容器，在容器中安装好所有依赖后，把容器实例转换为镜像
+用现有的系统直接打成docker镜像
+前者的好处是，文件系统分层情况良好，当你有很多镜像时，他们可能可以复用某一些文件层，节约空间和网络流量
+不好的地方就是步骤比较繁琐。后者的好处就是操作简单，但基础镜像的分层信息会丢失。
+因为我们除了Drone构建打包用docker，基本上没其他事了，ubuntu16裸机的这个分层，复用率不高，另外我们只在ci cd的这台电脑上加载这个镜像，没有什么docker集群，所以也不用担心网络流量的问题。所以综合考虑，我们可以考虑使用第二种方式或第三种方式， 由于我硬盘剩余空间比较小，故采用第二种方式
+1 安装docker 由于闫工给我的机器是ubuntu，所以我用apt安装 docker，略
+2.制作开发环境docker 2.1 docker镜像 拉取，启动 拉一个下载量最多的
+1 root@drone-ci-8-20:~# docker pull homebrew/ubuntu16.04 这时查看电脑上的镜像可以看到已经拉取的
+1 2 3 root@drone-ci-8-20:~# docker images REPOSITORY TAG IMAGE ID CREATED SIZE homebrew/ubuntu16.04 latest 6347afdf9148 6 months ago 1.27GB 实例化容器
+1 2 root@drone-ci-8-20:~# docker run -d homebrew/ubuntu16.04 tail -f /dev/null ed1c0b7568119b788b940e21fb1b2d50d63c3e9fe74a48a1dabd0d02987b3a5c tail -f /dev/null 会使这个容器一启动就 一直保持运行，这样我们才有机会进去安装环境</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ros2 on hbb&#39;s blog</title>
+    <link>/tags/ros2/</link>
+    <description>Recent content in Ros2 on hbb&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 24 Jan 2026 12:51:56 +0800</lastBuildDate><atom:link href="/tags/ros2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>play-bittle-with-ros2-isaaclab-isaacsim</title>
+      <link>/post/play-bittle-with-ros2-isaaclab-isaacsim/</link>
+      <pubDate>Sat, 24 Jan 2026 12:51:56 +0800</pubDate>
+      
+      <guid>/post/play-bittle-with-ros2-isaaclab-isaacsim/</guid>
+      <description>_ 2025.11 - 2025结束这段时间,跳槽到具身智能行业, 在同事的引导下摸索着自定义usd schema, 并使用非侵入的方式修改isaac sim的physX插件, 支持从UI上对USD scene中的prim增删自定义的schema api, 修改schema属性.
+下一阶段的目标是在isaac lab上尝试替换物理引擎进行rl 训练
+为了更快的适应工作要求,我给自己设定了一个快速入门的计划, 通过训练一个自己的机器人模型,来学习工作所需要的技能
+本博客将围绕bittle 4足机器狗 记录
+isaaclab 中训练 (平坦地面,4096个仿真环境 2000个迭代训练量, 4090 D大概10分钟左右即可) isaacsim 中推理 (在Ros2使用ps5手柄控制,发消息到仿真环境的Ros2节点,控制仿真世界的bittle) sim2sim (从physX 物理引擎转换到 其他物理引擎验证模型泛化能力) sim2real (通过模型蒸馏, 去除现实世界中不方便采样的数据,以及添加真实世界的6轴陀螺仪传感器) 本文不会介绍rl 和 infer的具体细节,但会提供代码,操作步骤,
+尝试探索代码,优化代码,这样才会有所收获
+计划常常在随着工作,目标,兴趣 调整, 不保证能做完, 但是有完成,我都会更新博客(否则岂不是做了个寂寞)
+0. Bittle bittle是一款比较成熟的学习用的机器狗, 4条腿每条腿有两个自由度,还有脖子一个,共有9个自由度,不过训练行走的话,脖子可以简略,视作8个dof.
+他有一个第三方的逆向建模, 但有一些小问题, 右边肢体的关节方向与左边不一样
+我做了一些调整,统一所有肢体的行为, 使其关节角度为负时,向前抬起肢体,
+除此之外,还修改了关节的名称, 把关节名称按 左右(L/R),关节位置(Front / Hind), 关节名称(Hip/Knee),关节行为(Flexion-Extention/Abduction- Adduction) 重命名
+由于Bittle没有向外侧扩张/合拢的关节(HAA),所以没有办法走螃蟹步,修改后的8个关节名称为
+LF_HFE (左前,髋关节,伸屈) LH_HFE &amp;hellip; RF_HFE &amp;hellip; RH_HFE &amp;hellip; LF_KFE &amp;hellip; LF_KFE &amp;hellip; RF_KFE &amp;hellip; RH_KFE (右后,膝关节,伸屈) 如果想购买Bittle, 需要注意他有ardiuno版本和esp32版本, 其中ardiuno版本不支持读取关节角度</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AMD on hbb&#39;s blog</title>
+    <link>/tags/amd/</link>
+    <description>Recent content in AMD on hbb&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 07 Jul 2024 12:48:29 +0800</lastBuildDate><atom:link href="/tags/amd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>amd-zynq-freeRTOS-开发笔记</title>
+      <link>/post/amd-zynq-freertos-%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sun, 07 Jul 2024 12:48:29 +0800</pubDate>
+      
+      <guid>/post/amd-zynq-freertos-%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/</guid>
+      <description>0.序 Zynq®-7000 系列基于 Xilinx SoC 架构。这些产品在单个器件中集成了功能丰富的基于 ARM® Cortex™-A9 的双核或单核处理系统 (PS) 和 28 nm Xilinx 可编程逻辑 (PL)。 ARM Cortex-A9 CPU 是 PS 的核心，还包括片上存储器、外部存储器接口和丰富的外设连接接口。
+本文档记录的是 zynq 7020开发过程中的一些经验
+7020上PS端有两个ARM 核 ，还有一个FPGA用的PL
+我们的FPGA工程师使用Vivado完成PL端的工程配置，编码后，导出.xsa 文件，
+我和我组内的小伙伴使用Vitis ，将.xsa生成为 PS端的工程
+使用xilinx BSP中集成的SDK和FreeRTOS,进行裸机开发
+由我同事完成网络相机核心代码
+我作为摸鱼罪犯，被发配到这个项目做一些比较有手就行的任务
+裸机意味着很多工具都不能用了，比如ssh, shell，文件系统， 还有c++的libc
+所以我在这个项目中主要用c进行下面这几项开发
+文件系统移植，验证 (bsp中有现成的) FreeRTOS串口命令行CLI工具移植 （用来平替Linux的ssh + shell 格式化文件系统 上传文件 打印文件内容 打包程序，制作引导，烧录固化 1.FreeRTOS串口CLI 移植 zynq 7020有两个串口，默认会把启动信息写到第0个， 第1个串口则预留着，
+我们的硬件工程师只把串口0 暴露到设备外壳上，所以我们要做的是 zynq 默认串口通道上 加上CLI命令行交互功能以及传输文件功能，
+1.1 zynq相关源码获取 签出FreeRTOS源码，切换到vitis 内置的FreeRTOS对应的版本，对于我来说是10.4.x ，我们需要下列这些
+CLI插件整个目录
+串口CLI实现
+几个示例命令实现
+Zynq串口头文件 和 Zynq的串口实现 （官方提供了一个基于队列的串口，性能比较差，但够用，如果想更快，需要自己用DMA实现</description>
+    </item>
+    
+  </channel>
+</rss>

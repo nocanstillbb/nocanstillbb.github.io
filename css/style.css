@@ -1,0 +1,427 @@
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #393E41;
+        color: white;
+    }
+
+    blockquote {
+      background: #393E41;
+    }
+
+    a {
+      color: #EBC3DB;
+    }
+
+    header {
+      background: #393E41;
+      border-bottom: 2px dotted #EBC3DB;
+
+    }
+
+    .article-meta, .menu a {
+      background: #393E41;
+      color: white;
+    }
+
+    table {
+      margin: auto;
+      border-top: 1px solid #666;
+      border-bottom: 1px solid #666;
+    }
+    table thead th { border-bottom: 1px solid #666; }
+    th, td { padding: 5px; }
+    tr:nth-child(even) { background: #666 }
+
+}
+
+
+/* Light mode */
+@media (prefers-color-scheme: light) {
+    blockquote {
+      background: #f9f9f9;
+    }
+
+    a {
+      color: #613DC1;
+    }
+
+    header {
+      background: #613DC1;
+    }
+
+    .article-meta, .menu a {
+      background: #E8DBC5;
+      color: #000;
+    }
+
+    table {
+      margin: auto;
+      border-top: 1px solid #666;
+      border-bottom: 1px solid #666;
+    }
+    table thead th { border-bottom: 1px solid #ddd; }
+    th, td { padding: 5px; }
+    tr:nth-child(even) { background: #eee }
+
+}
+
+
+body {
+  max-width: 800px;
+  margin: auto;
+  padding: .2em;
+  line-height: 1.5em;
+}
+
+h1 {
+  line-height: 1.5em;
+}
+
+/* Table of Contents, if wanted
+
+Add to yaml:
+
+output:
+  blogdown::html_page:
+    toc: true
+
+    */
+
+#TableOfContents, #TOC {
+  border: 1px solid #eee;
+  border-radius: 5px;
+}
+
+/* Header and Footer */
+.menu li { display: inline-block; }
+.article-meta, .menu a {
+  text-decoration: none;
+  padding: 5px;
+  border-radius: 5px;
+  border-style: dotted;
+  border-width: 1px;
+  margin-bottom: 20px;
+}
+
+.terms { font-size: .9em; }
+.menu, .article-meta, footer { text-align: center; }
+.title { font-size: 1.1em; }
+footer a { text-decoration: none; }
+
+.pull-left {
+    float: left
+}
+.pull-right {
+    float: right
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Adjust background at your leisure! */
+header {
+    position: relative;
+    width: 100%;
+    height: 1.5rem;
+    font-size: 1rem;
+}
+
+header ul,
+header ol {
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+header nav {
+    padding: 0 0.5rem
+}
+
+header a {
+    color: #fff;
+    line-height: 1.5rem;
+    padding: 0 0.5rem
+}
+header a:hover,
+header .current a {
+    color: #fff
+}
+
+/* Code Boxes 
+pre {
+  border: 2px solid #EBC3DB;
+  padding: 1em;
+  overflow-x: auto;
+}
+pre code { background: none; }
+*/
+
+
+/*
+.highlight-wrapper {
+  display: block;
+}
+
+
+.chroma .lntd pre {
+    border: 0px solid #ccc;
+}
+
+.chroma .lntd:first-child {
+  padding: 7px 7px 7px 10px;
+  margin: 0;
+}
+
+.chroma .lntd:last-child {
+  padding: 7px 10px 7px 7px;
+  margin: 0;
+}
+*/
+
+.highlight {
+  position: relative;
+  z-index: 0;
+  padding: 0;
+  margin:40px 0 10px 0;
+  border-radius: 4px;
+}
+
+/*
+.highlight > .chroma {
+  position: static;
+  z-index: 1;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding: 10px;
+}*/
+
+.copy-code-button {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  top: -28px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 14px;
+  letter-spacing: 0.5px;
+  width: 65px;
+  color: #ffffff;
+  background-color: #000000;
+  border: 1.25px solid #232326;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  white-space: nowrap;
+  padding: 6px 6px 7px 6px;
+  margin: 0 0 0 1px;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.copy-code-button:hover,
+.copy-code-button:focus,
+.copy-code-button:active,
+.copy-code-button:active:hover {
+  color: #222225;
+  background-color: #b3b3b3;
+  opacity: 0.8;
+}
+
+.copyable-text-area {
+  position: absolute;
+  height: 0;
+  z-index: -1;
+  opacity: .01;
+}
+.chroma [data-lang]:before {
+  position: absolute;
+  z-index: 0;
+  top: -28px;
+  left: 0;
+  content: attr(data-lang);
+  font-size: 1.1em;
+  font-weight: 700;
+  color: white;
+  background-color: black;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  padding: 6px 6px 7px 6px;
+  line-height: 14px;
+  opacity: 0.6;
+  position: absolute;
+  letter-spacing: 0.5px;
+  border: 1.25px solid #232326;
+  margin: 0 0 0 0px;
+}
+
+
+
+div.chroma {overflow-x: auto;  border: 1px solid #000;}
+/* Background */ .bg { color: #f8f8f2; background-color: #272822; }
+/* PreWrapper */ .chroma { color: #f8f8f2; background-color: #272822; /*overflow-x: auto; */ /*white-space: pre-wrap; */ padding:  0 0.5em 0 0.5em }
+/* Other */ .chroma .x {  }
+/* Error */ .chroma .err { color: #960050; background-color: #1e0010 }
+/* CodeLine */ .chroma .cl {}
+/* LineLink */ .chroma .lnlinks { outline: none; text-decoration: none; color: inherit }
+/* LineTableTD */ .chroma .lntd {  vertical-align: top; padding: 0; margin: 0; border: 0; line-height: 1.5em;}
+/* LineTable */ .chroma .lntable {  border-spacing: 0; padding: 0; margin: 0; border: 0; }
+/* LineHighlight */ .chroma .hl { background-color: #000000;}
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; -webkit-user-select: none; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7f7f7f }
+/* LineNumbers */ .chroma .ln { white-space: pre; -webkit-user-select: none; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7f7f7f }
+/* Line */ .chroma .line { /*display: flex;*/ white-space: pre;   padding: 0 0.4em 0 0.4em;color: #7f7f7f }
+
+/* Background */ .chroma { background-color: #ffffff }
+/* Error */ .chroma .err { color: #a61717; background-color: #e3d2d2 }
+/* Keyword */ .chroma .k { color: #000000; font-weight: bold }
+/* KeywordConstant */ .chroma .kc { color: #000000; font-weight: bold }
+/* KeywordDeclaration */ .chroma .kd { color: #000000; font-weight: bold }
+/* KeywordNamespace */ .chroma .kn { color: #000000; font-weight: bold }
+/* KeywordPseudo */ .chroma .kp { color: #000000; font-weight: bold }
+/* KeywordReserved */ .chroma .kr { color: #000000; font-weight: bold }
+/* KeywordType */ .chroma .kt { color: #445588; font-weight: bold }
+/* NameAttribute */ .chroma .na { color: #008080 }
+/* NameBuiltin */ .chroma .nb { color: #0086b3 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #999999 }
+/* NameClass */ .chroma .nc { color: #445588; font-weight: bold }
+/* NameConstant */ .chroma .no { color: #008080 }
+/* NameDecorator */ .chroma .nd { color: #3c5d5d; font-weight: bold }
+/* NameEntity */ .chroma .ni { color: #800080 }
+/* NameException */ .chroma .ne { color: #990000; font-weight: bold }
+/* NameFunction */ .chroma .nf { color: #990000; font-weight: bold }
+/* NameLabel */ .chroma .nl { color: #990000; font-weight: bold }
+/* NameNamespace */ .chroma .nn { color: #555555 }
+/* NameTag */ .chroma .nt { color: #000080 }
+/* NameVariable */ .chroma .nv { color: #008080 }
+/* NameVariableClass */ .chroma .vc { color: #008080 }
+/* NameVariableGlobal */ .chroma .vg { color: #008080 }
+/* NameVariableInstance */ .chroma .vi { color: #008080 }
+/* LiteralString */ .chroma .s { color: #dd1144 }
+/* LiteralStringAffix */ .chroma .sa { color: #dd1144 }
+/* LiteralStringBacktick */ .chroma .sb { color: #dd1144 }
+/* LiteralStringChar */ .chroma .sc { color: #dd1144 }
+/* LiteralStringDelimiter */ .chroma .dl { color: #dd1144 }
+/* LiteralStringDoc */ .chroma .sd { color: #dd1144 }
+/* LiteralStringDouble */ .chroma .s2 { color: #dd1144 }
+/* LiteralStringEscape */ .chroma .se { color: #dd1144 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #dd1144 }
+/* LiteralStringInterpol */ .chroma .si { color: #dd1144 }
+/* LiteralStringOther */ .chroma .sx { color: #dd1144 }
+/* LiteralStringRegex */ .chroma .sr { color: #009926 }
+/* LiteralStringSingle */ .chroma .s1 { color: #dd1144 }
+/* LiteralStringSymbol */ .chroma .ss { color: #990073 }
+/* LiteralNumber */ .chroma .m { color: #009999 }
+/* LiteralNumberBin */ .chroma .mb { color: #009999 }
+/* LiteralNumberFloat */ .chroma .mf { color: #009999 }
+/* LiteralNumberHex */ .chroma .mh { color: #009999 }
+/* LiteralNumberInteger */ .chroma .mi { color: #009999 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #009999 }
+/* LiteralNumberOct */ .chroma .mo { color: #009999 }
+/* Operator */ .chroma .o { color: #000000; font-weight: bold }
+/* OperatorWord */ .chroma .ow { color: #000000; font-weight: bold }
+/* Comment */ .chroma .c { color: #999988; font-style: italic }
+/* CommentHashbang */ .chroma .ch { color: #999988; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #999988; font-style: italic }
+/* CommentSingle */ .chroma .c1 { color: #999988; font-style: italic }
+/* CommentSpecial */ .chroma .cs { color: #999999; font-weight: bold; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #999999; font-weight: bold; font-style: italic }
+/* CommentPreprocFile */ .chroma .cpf { color: #999999; font-weight: bold; font-style: italic }
+/* GenericDeleted */ .chroma .gd { color: #000000; background-color: #ffdddd }
+/* GenericEmph */ .chroma .ge { color: #000000; font-style: italic }
+/* GenericError */ .chroma .gr { color: #aa0000 }
+/* GenericHeading */ .chroma .gh { color: #999999 }
+/* GenericInserted */ .chroma .gi { color: #000000; background-color: #ddffdd }
+/* GenericOutput */ .chroma .go { color: #888888 }
+/* GenericPrompt */ .chroma .gp { color: #555555 }
+/* GenericStrong */ .chroma .gs { font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #aaaaaa }
+/* GenericTraceback */ .chroma .gt { color: #aa0000 }
+/* TextWhitespace */ .chroma .w { color: #bbbbbb }
+
+
+
+
+
+
+
+
+/* Images, tables, misc. */
+img, iframe, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main {
+  hyphens: auto;
+  /* max-width: 650px;*/
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5em;
+  hyphens: auto;
+  display: block;
+  font-size: 1.1em;
+}
+main a {
+  font-weight: bold;
+}
+
+blockquote {
+
+  border-left: 5px solid #ccc;
+  padding: 3px 1em 3px;
+}
+
+.content-wrapper {
+  padding: 0px 12px 0px 12px;
+}
+#foxy {
+  min-width: 40px;
+  float: right;
+  padding: 10px;
+  display: block;
+}
+
+
+#table-of-contents {
+}
+
+/* Small devices, phones */
+@media only screen and (min-width : 480px) {
+  #foxy {
+    min-width: 40px;
+    float: center;
+    padding: 10px 10px 10px 20px;
+    display: block;
+  }
+
+}
+
+/* 在大屏幕上应用特定样式 */
+@media screen and (min-width: 768px) {
+    #table-of-contents {
+        z-index:100;
+        position: fixed; /* 固定定位，使其悬浮在页面上 */
+        top: 50%; /* 上边距为50% */
+        right: 15px; /* 右边距为0，将其放在右侧 */
+        transform: translateY(-50%); /* 使用transform来垂直居中 */
+        background-color: #f0f0f0; /* 设置背景颜色 */
+        padding: 10px; /* 添加一些内边距以增加可读性 */
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+        width: 250px; /* 设置宽度 */
+        max-height: 70vh; /* 设置最大高度为视口的70% */
+        overflow-y: auto; /* 添加垂直滚动条 */
+    }
+}
+

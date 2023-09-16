@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on hbb&#39;s blog</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on hbb&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 15 Feb 2026 12:00:00 +0800</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ClaudeCode</title>
+      <link>/tags/claudecode/</link>
+      <pubDate>Sun, 15 Feb 2026 12:00:00 +0800</pubDate>
+      
+      <guid>/tags/claudecode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bittle</title>
+      <link>/tags/bittle/</link>
+      <pubDate>Sat, 24 Jan 2026 12:51:56 +0800</pubDate>
+      
+      <guid>/tags/bittle/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IsaacLab</title>
+      <link>/tags/isaaclab/</link>
+      <pubDate>Sat, 24 Jan 2026 12:51:56 +0800</pubDate>
+      
+      <guid>/tags/isaaclab/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IsaacSim</title>
+      <link>/tags/isaacsim/</link>
+      <pubDate>Sat, 24 Jan 2026 12:51:56 +0800</pubDate>
+      
+      <guid>/tags/isaacsim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ros2</title>
+      <link>/tags/ros2/</link>
+      <pubDate>Sat, 24 Jan 2026 12:51:56 +0800</pubDate>
+      
+      <guid>/tags/ros2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Omniverse</title>
+      <link>/tags/omniverse/</link>
+      <pubDate>Sat, 20 Dec 2025 12:51:56 +0800</pubDate>
+      
+      <guid>/tags/omniverse/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Qt Plugin</title>
+      <link>/tags/qt-plugin/</link>
+      <pubDate>Sat, 20 Dec 2025 12:51:56 +0800</pubDate>
+      
+      <guid>/tags/qt-plugin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;</title>
+      <link>/tags/c&#43;&#43;/</link>
+      <pubDate>Sun, 18 May 2025 12:48:29 +0800</pubDate>
+      
+      <guid>/tags/c&#43;&#43;/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>react native</title>
+      <link>/tags/react-native/</link>
+      <pubDate>Sun, 18 May 2025 12:48:29 +0800</pubDate>
+      
+      <guid>/tags/react-native/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>turbo module</title>
+      <link>/tags/turbo-module/</link>
+      <pubDate>Sun, 18 May 2025 12:48:29 +0800</pubDate>
+      
+      <guid>/tags/turbo-module/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>udp broadcast</title>
+      <link>/tags/udp-broadcast/</link>
+      <pubDate>Fri, 02 May 2025 12:48:29 +0800</pubDate>
+      
+      <guid>/tags/udp-broadcast/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>usbipd</title>
+      <link>/tags/usbipd/</link>
+      <pubDate>Fri, 02 May 2025 12:48:29 +0800</pubDate>
+      
+      <guid>/tags/usbipd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wsl</title>
+      <link>/tags/wsl/</link>
+      <pubDate>Fri, 02 May 2025 12:48:29 +0800</pubDate>
+      
+      <guid>/tags/wsl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>chromium</title>
+      <link>/tags/chromium/</link>
+      <pubDate>Sun, 30 Mar 2025 12:48:29 +0800</pubDate>
+      
+      <guid>/tags/chromium/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ModbusRTU</title>
+      <link>/tags/modbusrtu/</link>
+      <pubDate>Sun, 29 Dec 2024 12:48:29 +0800</pubDate>
+      
+      <guid>/tags/modbusrtu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Simulation</title>
+      <link>/tags/simulation/</link>
+      <pubDate>Sun, 29 Dec 2024 12:48:29 +0800</pubDate>
+      
+      <guid>/tags/simulation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>/tags/windows/</link>
+      <pubDate>Sat, 28 Dec 2024 12:48:29 +0800</pubDate>
+      
+      <guid>/tags/windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WSL2</title>
+      <link>/tags/wsl2/</link>
+      <pubDate>Sat, 28 Dec 2024 12:48:29 +0800</pubDate>
+      
+      <guid>/tags/wsl2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>BLUTOOTH</title>
+      <link>/tags/blutooth/</link>
+      <pubDate>Sat, 26 Oct 2024 12:48:29 +0800</pubDate>
+      
+      <guid>/tags/blutooth/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GPIO</title>
+      <link>/tags/gpio/</link>
+      <pubDate>Sat, 26 Oct 2024 12:48:29 +0800</pubDate>
+      
+      <guid>/tags/gpio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>I2C</title>
+      <link>/tags/i2c/</link>
+      <pubDate>Sat, 26 Oct 2024 12:48:29 +0800</pubDate>
+      
+      <guid>/tags/i2c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NVME</title>
+      <link>/tags/nvme/</link>
+      <pubDate>Sat, 26 Oct 2024 12:48:29 +0800</pubDate>
+      
+      <guid>/tags/nvme/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RaspberryPI 5</title>
+      <link>/tags/raspberrypi-5/</link>
+      <pubDate>Sat, 26 Oct 2024 12:48:29 +0800</pubDate>
+      
+      <guid>/tags/raspberrypi-5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>/tags/docker/</link>
+      <pubDate>Sun, 20 Oct 2024 12:48:29 +0800</pubDate>
+      
+      <guid>/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GUI</title>
+      <link>/tags/gui/</link>
+      <pubDate>Sun, 20 Oct 2024 12:48:29 +0800</pubDate>
+      
+      <guid>/tags/gui/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nvidia-docker2</title>
+      <link>/tags/nvidia-docker2/</link>
+      <pubDate>Sun, 20 Oct 2024 12:48:29 +0800</pubDate>
+      
+      <guid>/tags/nvidia-docker2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>X11</title>
+      <link>/tags/x11/</link>
+      <pubDate>Sun, 20 Oct 2024 12:48:29 +0800</pubDate>
+      
+      <guid>/tags/x11/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MacOS</title>
+      <link>/tags/macos/</link>
+      <pubDate>Sun, 06 Oct 2024 12:48:29 +0800</pubDate>
+      
+      <guid>/tags/macos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Radxa</title>
+      <link>/tags/radxa/</link>
+      <pubDate>Sat, 27 Jul 2024 12:48:29 +0800</pubDate>
+      
+      <guid>/tags/radxa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rock5C</title>
+      <link>/tags/rock5c/</link>
+      <pubDate>Sat, 27 Jul 2024 12:48:29 +0800</pubDate>
+      
+      <guid>/tags/rock5c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UART</title>
+      <link>/tags/uart/</link>
+      <pubDate>Sat, 27 Jul 2024 12:48:29 +0800</pubDate>
+      
+      <guid>/tags/uart/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AMD</title>
+      <link>/tags/amd/</link>
+      <pubDate>Sun, 07 Jul 2024 12:48:29 +0800</pubDate>
+      
+      <guid>/tags/amd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C</title>
+      <link>/tags/c/</link>
+      <pubDate>Sun, 07 Jul 2024 12:48:29 +0800</pubDate>
+      
+      <guid>/tags/c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>FreeRTOS</title>
+      <link>/tags/freertos/</link>
+      <pubDate>Sun, 07 Jul 2024 12:48:29 +0800</pubDate>
+      
+      <guid>/tags/freertos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Zynq</title>
+      <link>/tags/zynq/</link>
+      <pubDate>Sun, 07 Jul 2024 12:48:29 +0800</pubDate>
+      
+      <guid>/tags/zynq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CTags</title>
+      <link>/tags/ctags/</link>
+      <pubDate>Sun, 16 Jun 2024 12:00:00 +0800</pubDate>
+      
+      <guid>/tags/ctags/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VIM</title>
+      <link>/tags/vim/</link>
+      <pubDate>Sun, 16 Jun 2024 12:00:00 +0800</pubDate>
+      
+      <guid>/tags/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jetson</title>
+      <link>/tags/jetson/</link>
+      <pubDate>Wed, 01 May 2024 12:00:00 +0800</pubDate>
+      
+      <guid>/tags/jetson/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nvidia</title>
+      <link>/tags/nvidia/</link>
+      <pubDate>Wed, 01 May 2024 12:00:00 +0800</pubDate>
+      
+      <guid>/tags/nvidia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IPC</title>
+      <link>/tags/ipc/</link>
+      <pubDate>Thu, 04 Apr 2024 12:00:00 +0800</pubDate>
+      
+      <guid>/tags/ipc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SharedMemory</title>
+      <link>/tags/sharedmemory/</link>
+      <pubDate>Thu, 04 Apr 2024 12:00:00 +0800</pubDate>
+      
+      <guid>/tags/sharedmemory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Boost Asio</title>
+      <link>/tags/boost-asio/</link>
+      <pubDate>Sun, 24 Mar 2024 12:48:29 +0800</pubDate>
+      
+      <guid>/tags/boost-asio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Drone</title>
+      <link>/tags/drone/</link>
+      <pubDate>Sat, 23 Mar 2024 12:48:29 +0800</pubDate>
+      
+      <guid>/tags/drone/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Forgejo</title>
+      <link>/tags/forgejo/</link>
+      <pubDate>Sat, 23 Mar 2024 12:48:29 +0800</pubDate>
+      
+      <guid>/tags/forgejo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GCC</title>
+      <link>/tags/gcc/</link>
+      <pubDate>Wed, 07 Feb 2024 00:00:00 +0800</pubDate>
+      
+      <guid>/tags/gcc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ubuntu</title>
+      <link>/tags/ubuntu/</link>
+      <pubDate>Wed, 07 Feb 2024 00:00:00 +0800</pubDate>
+      
+      <guid>/tags/ubuntu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Arm64</title>
+      <link>/tags/arm64/</link>
+      <pubDate>Wed, 31 Jan 2024 18:48:29 +0800</pubDate>
+      
+      <guid>/tags/arm64/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CMake</title>
+      <link>/tags/cmake/</link>
+      <pubDate>Wed, 31 Jan 2024 18:48:29 +0800</pubDate>
+      
+      <guid>/tags/cmake/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cross-comple</title>
+      <link>/tags/cross-comple/</link>
+      <pubDate>Wed, 31 Jan 2024 18:48:29 +0800</pubDate>
+      
+      <guid>/tags/cross-comple/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Meson</title>
+      <link>/tags/meson/</link>
+      <pubDate>Wed, 31 Jan 2024 18:48:29 +0800</pubDate>
+      
+      <guid>/tags/meson/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RaspberryPI</title>
+      <link>/tags/raspberrypi/</link>
+      <pubDate>Wed, 31 Jan 2024 18:48:29 +0800</pubDate>
+      
+      <guid>/tags/raspberrypi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VCPKG</title>
+      <link>/tags/vcpkg/</link>
+      <pubDate>Wed, 31 Jan 2024 18:48:29 +0800</pubDate>
+      
+      <guid>/tags/vcpkg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Core</title>
+      <link>/tags/core/</link>
+      <pubDate>Sat, 13 Jan 2024 17:51:56 +0800</pubDate>
+      
+      <guid>/tags/core/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dump</title>
+      <link>/tags/dump/</link>
+      <pubDate>Sat, 13 Jan 2024 17:51:56 +0800</pubDate>
+      
+      <guid>/tags/dump/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Qml</title>
+      <link>/tags/qml/</link>
+      <pubDate>Sat, 09 Dec 2023 17:51:56 +0800</pubDate>
+      
+      <guid>/tags/qml/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Qt5</title>
+      <link>/tags/qt5/</link>
+      <pubDate>Sat, 09 Dec 2023 17:51:56 +0800</pubDate>
+      
+      <guid>/tags/qt5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Translator</title>
+      <link>/tags/translator/</link>
+      <pubDate>Sat, 09 Dec 2023 17:51:56 +0800</pubDate>
+      
+      <guid>/tags/translator/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Qt Creator</title>
+      <link>/tags/qt-creator/</link>
+      <pubDate>Thu, 30 Nov 2023 17:51:56 +0800</pubDate>
+      
+      <guid>/tags/qt-creator/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Asset</title>
+      <link>/tags/asset/</link>
+      <pubDate>Mon, 13 Nov 2023 17:51:56 +0800</pubDate>
+      
+      <guid>/tags/asset/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Binaries</title>
+      <link>/tags/binaries/</link>
+      <pubDate>Mon, 13 Nov 2023 17:51:56 +0800</pubDate>
+      
+      <guid>/tags/binaries/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Qt</title>
+      <link>/tags/qt/</link>
+      <pubDate>Wed, 27 Sep 2023 18:48:29 +0800</pubDate>
+      
+      <guid>/tags/qt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CI/CD</title>
+      <link>/tags/ci/cd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ci/cd/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

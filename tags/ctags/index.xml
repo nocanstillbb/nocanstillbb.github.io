@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CTags on hbb&#39;s blog</title>
+    <link>/tags/ctags/</link>
+    <description>Recent content in CTags on hbb&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 16 Jun 2024 12:00:00 +0800</lastBuildDate><atom:link href="/tags/ctags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>vim-ctag-符号查找</title>
+      <link>/post/vim-ctag-%E7%AC%A6%E5%8F%B7%E6%9F%A5%E6%89%BE/</link>
+      <pubDate>Sun, 16 Jun 2024 12:00:00 +0800</pubDate>
+      
+      <guid>/post/vim-ctag-%E7%AC%A6%E5%8F%B7%E6%9F%A5%E6%89%BE/</guid>
+      <description>0x00 为什么使用CTag 长久以来， 我一直在ide中使用VIM插件，除此之外在Bash,Zsh也使用vim作为基本的文本编辑器， 所有的Git操作也都都交给了VIM+ Shell，在文本编辑方面，我使用统一的一套快捷键方案
+我使用过的IDE：visual studio , visual studio code , qt creator
+他们都有很好的VIM插件，并且集成了很好的符号查找，所以作为实用主义者，我一直觉得没有使用CTag+VIM的必要
+直到上周疯狂摸鱼后，被抓去写 C &amp;amp; Embedded， 我接触到了 Xilinx Vitis这款AMD旗下的IDE,这货竟然没有VIM键盘方案
+整一周在这条路上我走得像一个瘸子，痛定思痛，我认为是时候端出CTag这根阵年火腿了
+0x01 CTag安装+生成索引 0x0101 安装 由于编译服务器是Ubuntu，所以先只记录Ubuntu， 其他平台大差不差
+1 $ sudo apt-get update &amp;amp;&amp;amp; sudo apt-get install -y exuberant-ctags 0x0110 生成索引 写一个用于生成c/c++ tag的脚本 ctag.sh
+1 2 3 4 5 6 7 8 9 #!/bin/bash regex=&amp;#34;^.+.+$&amp;#34; if [[ ! $1 =~ $regex ]]; then echo &amp;#34;需要输入生成tag的目录的绝对路径，不能是‘.’&amp;#34; exit 1 fi cd $1 ctags -R --languages=c,c++ --exclude=node_modules --c++-kinds=+p --fields=+iaS --extra=+q .</description>
+    </item>
+    
+  </channel>
+</rss>

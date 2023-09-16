@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BLUTOOTH on hbb&#39;s blog</title>
+    <link>/tags/blutooth/</link>
+    <description>Recent content in BLUTOOTH on hbb&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 26 Oct 2024 12:48:29 +0800</lastBuildDate><atom:link href="/tags/blutooth/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>raspberry-pi5-开发笔记</title>
+      <link>/post/raspberry-pi5-%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sat, 26 Oct 2024 12:48:29 +0800</pubDate>
+      
+      <guid>/post/raspberry-pi5-%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/</guid>
+      <description>2024/07/27 添加nvme,bluetoothcli 相关内容 2024/10/26 添加使用非pd电源遇到的Usb电流问题 2024/12/14更新i2c 写入eeprom , 定制启动动画和开始菜单图标 0. 前车之鉴 0.1 glibc 兼容性问题 刚开始的时候，pi5的板子用了官方的镜像，即 Debian 12 bookworm. 但是交叉编译的镜像使用了Ubuntu 23.10 mantic, 交叉编译了Qt5 和程序后，放到板子上运行时，提示glibc版本不兼容， 是因为 bookworm和ubuntu 23.10的 libc 和libcxx版本不同导致，ubuntu23.10 2.38， bookworm 2.36，后面板子和交叉编译的docker镜像统一之后就ok了
+0.2 Qt程序显示不正常，半透明的图形不显示，窗口有黑边 虽然Qt正常编译过了，但是部署到板子上后，程序显示不正常，后经排查，是由于 Qt配置 EGL on X11失败，需要在编译配置/src/qt5/qtbase/mkspecs/devices/linux-rasp-pi4-v3d-g++/qmake.confr中添加编译选项 -fpermissive
+1 QMAKE_CXXFLAGS = $$QMAKE_CFLAGS -fpermissive 否则qt 源码中的configure工具 生成的EGL on X11 的单元测试会执行失败，导致配置失败
+0.3 检测不到I2C 初遇0.1中所述问题时，我把板子和docker环境的系统都 刷成ubuntu 23.10，之后板子一直检测不到i2c，叫大师帮忙检测硬件接线问题，无果，用示波器测量波形，正常。其他硬件没有测试，但应该也是有问题的，是因为官方虽然给了ubuntu23.10的镜像，但却没有预装硬件相关的工具，例如i2cdetect， 于是我用apt安装了一个，于是不能正常工作 ，如果克隆内核源码，单独编译工具应该也可以行得通，但我解决的方法简单粗暴，把板子和docker的系统都换为bookworm了，bookworm的工具是齐全的。
+0.4 GPIO C++编码后，不能正常初始化，提示系统不是树莓派 由于 PI5 做了很大的变更，所以GPIO相关的系统工具虽然内置了，但并不能适用 于pi5，pigpio在 /usr/include和/usr/lib中头文件库可以正常编译，链接，但编好的程序会提示初始化失败，解决的方法是使用开始的源 libgpiod，不要使用pigpio
+https://github.com/joan2937/pigpio/issues/589
+1. I2C 树莓波5支持3路i2c通讯，默认只打开 一组，即pin3,pin5，通过修改/boot/fireware/config.</description>
+    </item>
+    
+  </channel>
+</rss>

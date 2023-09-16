@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jetson on hbb&#39;s blog</title>
+    <link>/tags/jetson/</link>
+    <description>Recent content in Jetson on hbb&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 01 May 2024 12:00:00 +0800</lastBuildDate><atom:link href="/tags/jetson/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>nvidia-jetson开发笔记</title>
+      <link>/post/nvidia-jetson%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Wed, 01 May 2024 12:00:00 +0800</pubDate>
+      
+      <guid>/post/nvidia-jetson%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/</guid>
+      <description>2024.05.01 更新 jetson orin nx 刷nvme
+一开始只针对jetson xavier写文档,后来公司又用了jetson orin, 所以就一起写一个文档里了, jetson orin可以刷最新的 jetson linux 和 jetpack, 不过为了只维护一个版本, 我决定不管是xavier还是orin 都使用 xavier能用的最新版本, 即 jetpack 5.1.3+ jeson linux 35.5.0
+1. 刷机 jetson xavier NX开发板官方推荐的方式是使用刷sd卡的方式， 也可以使用flash.sh脚本或l4t_initrd_flash.sh直接刷，这样可以省略制作镜像的步骤
+截止2024.3.26， jetson xavier NX已然停产，不过仍然可以使用 JetPack 5.1.3 开发包进行开发
+我使用我的ubuntu16.04 开发环境的虚拟机制作镜像及烧录脚本烧录，
+也可以使用官方的gui刷机工具sdk-manager（ps 名称有点忘记了，好像是这个），不过那需要ubuntu18或ubuntu20
+1.1 准备工作 在Jetson Linux | NVIDIA Developer下载这两个
+Title Driver Package (BSP) Sample Root Filesystem 最好在linux中下载，因为windows文件系统不支持符号链接文件，我担心解压后会影响文件完整性
+下载后得到
+1 2 3 4 5 6 ~/Downloads/nvidia/Linux_for_Tegra$ ll total 2229716 drwxrwxr-x 3 deepvision deepvision 4096 3月 26 13:10 .</description>
+    </item>
+    
+  </channel>
+</rss>

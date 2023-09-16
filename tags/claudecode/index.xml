@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ClaudeCode on hbb&#39;s blog</title>
+    <link>/tags/claudecode/</link>
+    <description>Recent content in ClaudeCode on hbb&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 15 Feb 2026 12:00:00 +0800</lastBuildDate><atom:link href="/tags/claudecode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>claude_code笔记</title>
+      <link>/post/claude_code%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sun, 15 Feb 2026 12:00:00 +0800</pubDate>
+      
+      <guid>/post/claude_code%E7%AC%94%E8%AE%B0/</guid>
+      <description>claude code 笔记 2016/2/19 更新本地在claude code中使用自己部署的 code tool llm 以下记录一些本人使用技巧,不定时更新
+入门 /terminal-setup 方便shift + 加回在终端中换行
+/init 初始化claude.md ,初步分析项目结构
+#空格xxx 回车, xxx将被记录到claude.md ,
+./claude.local.md 优先级最高, 慢慢会被弃用
+./claude.md
+~/.claude.md 优先级最低
+/memory 可以直接编辑claude.md添加条目
+/model选择模型 , opus 很消耗token, 普通任务不用作用opus
+@文件名选择, 方向键选择,按下shift确定候选条目, 让claude知道上下文位置
+如果在vscode中用claude扩展, 可以打开文件选中, 会自动添加上下文件
+上下文件可以通过@xx:行号-等号 或在vs code中选中多行来指定更具体的位置
+@符号也在claude.md中,让memory 知道上下文
+做ui时,可以拖拽一个效果图片到终端, 然后@出某个代码中已存在的按钮,让修改
+一次对话中上下文太多可能在无意中引用他们,导致输出效果不好
+/exit 退出对话,再用claude命令重新打开命令 如果不退出对话 /clear 清除对话历史,和上下文,基本上和 /exit 重开对话效果一样 /compact 压缩对话历史和上下文, 对话很长时仍然有风险 按两次esc ,回溯到某个对话历史,删除后面的对话和上下文 /resume 如果在新会话中想恢复之前关闭的对话的上下文, /permissions 权限相关:如果在交互中选择了,是的并不再提问, 会保存配置到./.claude/setting.local.json
+计划模式, /plan 或 ctrl+ tab 切换模式</description>
+    </item>
+    
+  </channel>
+</rss>

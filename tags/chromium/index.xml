@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>chromium on hbb&#39;s blog</title>
+    <link>/tags/chromium/</link>
+    <description>Recent content in chromium on hbb&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 30 Mar 2025 12:48:29 +0800</lastBuildDate><atom:link href="/tags/chromium/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>编译精简的chromium记录</title>
+      <link>/post/%E7%BC%96%E8%AF%91%E7%B2%BE%E7%AE%80%E7%9A%84chromium%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Sun, 30 Mar 2025 12:48:29 +0800</pubDate>
+      
+      <guid>/post/%E7%BC%96%E8%AF%91%E7%B2%BE%E7%AE%80%E7%9A%84chromium%E8%AE%B0%E5%BD%95/</guid>
+      <description>0 前言 春节尝试了自己写pytorch模型, 通过我封装的vnc控件,远程docker中的Ubuntu, 采集扫雷游戏的截图, 训练两个模型
+自定义卷积对游戏截图状态识别 ddqn 强化学习,仅通过奖励在不教规则的情况下让模型自己学会玩扫雷 前面的识别模型一个星期就成功了,但是强化学习的效果除了花了春节一周时间,还追加了三个星期的周末,都没能成功
+不知道是不是强化学习需要的数据量太大导致的,因此只能暂时搁置此学习任务,否则道心不稳,天空好像始终覆盖一层厚重的阴霾
+为了走出ddqn的滑铁卢,我把目光转向chromium , 我想编译各平台的精简版本的chromium内核,像electorn一样使用它进行一些web集成到客户端(qt qml 的opengl frame buffer object)中的开发,这样既能享受web前端便利的生态,又能使用qt qml全平台的c++能力,对web在音视频等领域的乏力进行补充.
+1 mac os 官方文档
+https://github.com/chromium/chromium/blob/main/docs/mac_build_instructions.md
+https://bitbucket.org/chromiumembedded/cef/wiki/AutomatedBuildSetup.md#markdown-header-windows-configuration
+我们主要完成以下三个步骤
+arm64构建 x64构建 合并为通用的flat版本(x64和arm64都可用) 1.0 源码拉取 1.1 切换sdk 在src/build/config/mac/mac_sdk.gni里可以确认需要官方编译时的sdk版本
+这个版本不一定是要低要救,如果没有这个版本的sdk可以调为你有的版本实验编译,如果编译不过,再安装和他们一样的sdk版本
+如果需要安装新的sdk, 可能需要安装对应的xcode版本,在这里下载
+什么版本的xcode有什么版本的sdk 看这个说明
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 #选择xcode xcode-select -p sudo xcode-select --switch /Applications/Xcode.</description>
+    </item>
+    
+  </channel>
+</rss>

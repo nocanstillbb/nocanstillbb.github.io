@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Drone on hbb&#39;s blog</title>
+    <link>/tags/drone/</link>
+    <description>Recent content in Drone on hbb&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 23 Mar 2024 12:48:29 +0800</lastBuildDate><atom:link href="/tags/drone/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>forgejo-drone-ci-cd</title>
+      <link>/post/forgejo-drone-ci-cd/</link>
+      <pubDate>Sat, 23 Mar 2024 12:48:29 +0800</pubDate>
+      
+      <guid>/post/forgejo-drone-ci-cd/</guid>
+      <description>相关服务 forgejo : 源码版本控制， 前身是gitea， 由于 gitea有闭源风险， 社区不再信任，fork出forgejo继续开发开源版本， ps gitea也是从其他项目继续过来开发的
+drone : ci/cd
+drone服务 通过 weebhook 监听git 仓库事件，分发任务给runner执行CI/CD
+CI/CD 需要执行什么， 取决于添加到drone配置文件，通常名为 .drone.yml
+服务相关的docker compose放在附录之中了
+上传已有git仓库到forgejo 先在forgejo上创建仓库
+创建时，需要关注几个仓库的属性
+拥有者， 设置组织，如SW组织， 可见性， 一般都设置私有仓库， 再添加协作者 默认分支，一般设置为master ,和gitlab保持一致 创建完后把drone 用户添加到git仓库协作者， ci的docker环境会设置drone的ssh代理，让drone有权限访问代码
+再本地的代码库中设置远程库直接推送
+1 2 git remote add forgejo ssh://git@git3.deepvision-tech.net:222/SW/ci_demo_0.git git push 激活git仓库的drone 激活之前，git项目不会创建webhook,
+需要登录drone 激活 drone : http://10.1.8.129
+不需要填写用户名密码，点登录后自动以forgejo登录信息登录drone
+点击右上角同步项目信息,同步完会看到刚才新建的项目
+点击项目进制配置界面，点击
+默认设置点击保存
+保存后forgejo上的项目会生成一个webhook
+可以这weebhook中设置需要关注的git事件类型和git 分支
+通常是只有关键分支才需要ci/cd， 开发分支不需要，
+开发分支 合到关键分支，需要提交合并请求或拉取申请，待审核后合并后自动触发 持续集成
+weebook还可以试触发， 在调试ci/cd时很方便
+.drone.yml example</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Binaries on hbb&#39;s blog</title>
+    <link>/tags/binaries/</link>
+    <description>Recent content in Binaries on hbb&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 13 Nov 2023 17:51:56 +0800</lastBuildDate><atom:link href="/tags/binaries/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>vcpkg资产缓存与二进制缓存</title>
+      <link>/post/vcpkg%E8%B5%84%E4%BA%A7%E7%BC%93%E5%AD%98%E4%B8%8E%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%93%E5%AD%98/</link>
+      <pubDate>Mon, 13 Nov 2023 17:51:56 +0800</pubDate>
+      
+      <guid>/post/vcpkg%E8%B5%84%E4%BA%A7%E7%BC%93%E5%AD%98%E4%B8%8E%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%93%E5%AD%98/</guid>
+      <description>0x01 背景 翻墙用了一段时间的vcpkg了，在项目中使用vcpkg安装管理了一众开源框架
+range-v3 catch2 boost fmt opencv4 体验感很好，除了两个问题点
+需要翻墙才能安装依赖 就算其他同事也翻墙使用vcpkg，那上面的库他需要从克隆代码，下载二进制，编译，重新来一次，很耗时 于是围绕这两个问题挖掘msdn文档，用这个markdown记录探索过程
+0x02 坑 为了解决第1个问题，我把这几个库，以及vcpkg本身，从github上迁移到公司内网的forgejo服务器上，然后尝试修改vcpkg中，包的配置，试图让vcpkg改为从公司内网下载代码。像catch2, fmt, range-v3这几个库，结构比较简单，用这种方式确实成功了，工作量也不大，维护也简单，只需要修改vcpkg源码中这几个库的url，从github改为公司的forgejo路径就行了。但是当我在处理opencv4和boost的时候，我发现光是boost就有一百八十几个git submodule ， 不过这还不足以让我推翻这个方法， 因为我觉得可以通过脚本+ forgejo 的api服务+ access token就能用脚本批量的创建库存，上传代码。 直到我尝试修改opencv的vcpkg中的配置，我发现这些超大规模的大型开源库，并不只是用git clone拉取编译所需要的依赖，有的是通过http下载tar包，zip包。并且有时候并不是opencv4这种顶层项目下载的，而是它的子模块，或子模块的模块下载的。 这样一来，即使把源码都迁移到内网的forgejo上了，仍然会有一些二进制的包，没有在内网之中。 所以这个方案行不通
+0x03 最终解 在msdn上把vcpkg相关的文档精读了一下，我发现vcpkg不管是下载的文件，还是编译的文件，都可以缓存 ，而且可以在网络位置上共享。我测试了一下，把两台电脑设置了同样的网络位置的缓存目录，在一台电脑上翻墙，编译boost1.83.0和opencv4.5.5，在另一台电脑上，确实不翻墙的情况下也可以用vcpkg安装boost 1.83.0以及opencv 4.5.5，不需要重新从github下载，。当然还是需要从网络位置下载的，缓存几百兆的二进制文件如果不是在杭州，下载也是需要时间的，但相对来说快了不少。
+下面说说怎么配置
+1.研发的nas目录 dv-rd中创建缓存目录 vcpkg_asset_cache用于缓存安装过程中下载二进制
+vcpkg_binary_cache 用于缓存编译时生成的二进制包
+2.配置环境变量，告诉vcpkg从这两目录读写缓存 windows:
+VCPKG_BINARY_SOURCES clear;files,Z:/sw/vcpkg_binary_cache/,readwrite
+X_VCPKG_ASSET_SOURCES clear;x-azurl,file://Z:/sw/vcpkg_asset_cache/,,readwrite
+linux:由于同办法想windows一样把网络位置映射成为磁盘，所以用nfs挂载的方式
+1 mount -t nfs 10.2.1.11:/data/syncthing_data /xxxx/xxx 1 2 export X_VCPKG_ASSET_SOURCES=&amp;#34;clear;x-azurl,file:/nfs/vcpkg_cache/vcpkg_cache_linux/asset/,,readwrite&amp;#34; export VCPKG_BINARY_SOURCES=&amp;#34;clear;files,/nfs/vcpkg_cache/vcpkg_cache_linux/binary/,readwrite&amp;#34; 这里也可以配置网络位置只读，加一个本地路径读写，我电脑空间比较紧张，就只配置了远程的了。
+然后使用vcpkg安装的时候，就会自动从这里面找缓存了。如果没有的缓存，只需要在翻墙的电脑上用vcpkg安装一下，就会自动上传了。</description>
+    </item>
+    
+  </channel>
+</rss>

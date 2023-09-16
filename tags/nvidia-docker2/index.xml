@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nvidia-docker2 on hbb&#39;s blog</title>
+    <link>/tags/nvidia-docker2/</link>
+    <description>Recent content in Nvidia-docker2 on hbb&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 20 Oct 2024 12:48:29 +0800</lastBuildDate><atom:link href="/tags/nvidia-docker2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>windows_wsl2_nvidia-docker2镜像记录</title>
+      <link>/post/windows_wsl2_nvidia-docker2%E9%95%9C%E5%83%8F%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Sun, 20 Oct 2024 12:48:29 +0800</pubDate>
+      
+      <guid>/post/windows_wsl2_nvidia-docker2%E9%95%9C%E5%83%8F%E8%AE%B0%E5%BD%95/</guid>
+      <description>0. 写在前面 上上周我尝试了使用mac os 通过x11转发,显示从ubuntu docker中启动的gui程序,并使用ubuntu docker中的输入法的实践
+上周我尝试了在windows上在其基础上加入了nvidia-docker2的步骤,也成功了,不过没时间记录,于是今日写此文档记录
+不管是mac os还是windows上所做的这些实验,都是为了在docker中运行我的开源的yolo8辅助训练软件label-image
+1. 前置条件 1.1 wsl 2 由于windows上的ubuntu docker container运行在wsl2可以支持得更好,也是nvidia-docker2的充分必要条件,所以如果你安装的wsl发行版本不是wsl版本的话,需要先安装一个wsl2的docker-desktop
+安装成功后可以命令行查看
+1 2 3 PS C:\WINDOWS\system32&amp;gt; wsl --list -v NAME STATE VERSION * docker-desktop Running 2 wsl2的安装方法,随便搜索一下就有很多,略
+需要在docker-desktop中启用wsl2, 如果设置成功的放在, setting-&amp;gt;resouces中显示如下图
+1.2 nvidia-docker2安装 https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html
+参照些文,如此如此,这般这般,就好了,这里不再展开,没安装成功的再努力百度一下
+相比linux下的步骤简单, 安装完后在docker-desktop中重启一下docker就可以生效
+如果是在linux下, 需要
+sudo systemctl reload-daemon &amp;amp;&amp;amp; sudo systemctl restart docker by the way ,
+linux的docker的daemon.json在/etc/docker/daemon.json
+widnows的docker的daemon.json在~/.config/docker/daemon.json
+设置代理会解决很多镜像拉不下来的问题
+1 2 3 4 5 6 7 8 9 10 11 12 { &amp;#34;registry-mirrors&amp;#34;: [ &amp;#34;https://dockerhub.</description>
+    </item>
+    
+  </channel>
+</rss>
