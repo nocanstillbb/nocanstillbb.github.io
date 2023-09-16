@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>udp broadcast on hbb&#39;s blog</title>
+    <link>/tags/udp-broadcast/</link>
+    <description>Recent content in udp broadcast on hbb&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 02 May 2025 12:48:29 +0800</lastBuildDate><atom:link href="/tags/udp-broadcast/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>wsl同时使用udp广播和usb</title>
+      <link>/post/wsl%E5%90%8C%E6%97%B6%E4%BD%BF%E7%94%A8udp%E5%B9%BF%E6%92%AD%E5%92%8Cusb/</link>
+      <pubDate>Fri, 02 May 2025 12:48:29 +0800</pubDate>
+      
+      <guid>/post/wsl%E5%90%8C%E6%97%B6%E4%BD%BF%E7%94%A8udp%E5%B9%BF%E6%92%AD%E5%92%8Cusb/</guid>
+      <description>0.背景 ​ 遇到一个问题, 之前写了一个cv ai 模型辅助训练的工具给客户使用,用于采集我司AI相机的图片,训练模型后再上传回AI相机
+这个工具中使用了很多bash环境下的工具, 比如async scp,节约了很多重复造轮子的时间,但也注定了几乎离不开bash环境了
+在要windows上运行这个工具,面临这几种方案的选择
+使用wsl,docker之类的,运行于其中 (快乐的摸鱼时光) 在windows上安装bash环境 (小量修改) 抽象bash工具调用的方法适配 (工作量巨大) 毫无疑问,出于对公司的负责,我选择了成本最低的方案1
+工业软件经常在在配置设备的Ip之前用udp广播来发现网络设备, 因为udp broadcast运行在 第二层数据链路层, ip在第三层
+我写的这个工具也使用了udp广播来发现设备, 同时后期还加入了硬件加密 usb子锁,
+所以它需要运行在wsl中,同时使用udp广播和usb接口
+1. 同时使用udp广播和usb接口的问题 1.1 wsl usb挂载模式 wsl中已经有成熟的usb方案,即 usbipd.
+可以在windows host上把某一个usb设置共享,在wsl中设置挂载
+如它的名字, usb ip d, 基于usb/ip协议的daemon程序,它的运行的基础是:
+需要windows 和 wsl 可以通过ip 通讯
+1.2 wsl的三种网络模式 经常使用wsl的朋友都知道wsl有三种网络工作模式
+NAT (默认) Mirrored Bridged nat 模式时, wsl运行在一个hyper v 的nat子网络中, 这个网络适配器在ncpa.cpl工具中看不到,但使用ipconfig可以看到,用hyper v网络管理工具也可以看到,应该是防老6误操作,偷感十足. nat天然的不能广播udp, 就像在家里的局域网不能无限制的向上层网络广播一样
+mirrored械时, wsl里可以看到所有windows的网络适配器, 这个模式是微软推荐的方式,但这个模式,可能是为了防止udp风暴,这个模式下udp广播是有限制的,随便一搜就能看到很多人在github上讨论谁家的udp包又丢了
+最后birgded,这个模式是微软想要铲掉的功能,因为bridge模式下, wsl 的网络像一座孤岛, 完全和windows host隔离了, 它独自占用了一个wsl 外部网络(对应一个物理网卡),所以它也可以对外广播</description>
+    </item>
+    
+  </channel>
+</rss>

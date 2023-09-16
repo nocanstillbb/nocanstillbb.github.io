@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Simulation on hbb&#39;s blog</title>
+    <link>/tags/simulation/</link>
+    <description>Recent content in Simulation on hbb&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 29 Dec 2024 12:48:29 +0800</lastBuildDate><atom:link href="/tags/simulation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>modbus_rtu从站仿真</title>
+      <link>/post/modbus_rtu%E4%BB%8E%E7%AB%99%E4%BB%BF%E7%9C%9F/</link>
+      <pubDate>Sun, 29 Dec 2024 12:48:29 +0800</pubDate>
+      
+      <guid>/post/modbus_rtu%E4%BB%8E%E7%AB%99%E4%BB%BF%E7%9C%9F/</guid>
+      <description>前言 上周,开发了一个可视化配置的modbus模块,用于和电气部门的西门子plc的modbus RTU slave通讯.
+实现主要使用qt的qmodbusslave相关的类, 细节不再展开
+由于电气工程师们也是第一次使用modbus RTU模块, 对配置不熟悉,所以我需要自己仿真通讯,验证程序逻辑
+主要遇到的问题是, modbus RTU是基于串口的, 如果是modbus tcp直接通过已有的网络仿真 modbus slave就可以,但电脑本身没有串口,要怎么仿真 modbus slave运行,以验证自己实现的modbus master逻辑呢.
+通过一周下来的摸索,我找到3种方法
+方法1 qt5中,modbus RTU的从站对应的c++类是 QModbusRtuSerialMaster , modbus Tcp从站应对的c++类则是QModbusTcpClient. 它们都继承自QModbusClient.
+这两个除了连接的接口不同,上层封装的接口没有任何区别,包括读写,状态,错误接口
+所以可以先用QModbusTcpClient类 + 一个仿真的modbus tcp master, 就可以验证了
+可以直接从qt 5安装的exmaple中找到 modbus slave代码,编译了它你就拥有一个仿真用的modbus 从站
+配置好环境编译后直接运行以验证
+这个方法的缺点是串口连接的逻辑没有办法验证
+有一个坑是 QModbusRtuSerialMaster连接的方法connectDevice成功是同步返回的,不像 QModbusTcpClient连接后立即返回,
+如果用事件循环进一步封装需要注意,否则会导致事件循环永退出在开始之前,调用modbus 连接的线程一直挂起
+我就在这个问题浪费一下午,痛定思痛才摸索出第2种和第3种方式,完全的仿真 modbus RTU的通讯
+方法2 在windows上使用虚拟串口(这个可以自选上网搜索,大多数是破解收费的),创建一对Tx Rx交叉的串口对, 例如 COM1和 COM2
+然后使用qt example的modbus slave 运行在COM1
+你的modbus master程序使用com2 ,连接上之后就可以完整的验证modbus RTU的整个通讯过程
+方式3 此方式与 方法2雷同
+区别是直接使用两个物理串口 交叉连接 TX RX</description>
+    </item>
+    
+  </channel>
+</rss>
