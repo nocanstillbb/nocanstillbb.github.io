@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Fira Code');
+html { font-family:
+    'Fira Code',
+        'Apple Color Emoji',
+        'Segoe UI Emoji',
+        'Segoe UI Symbol';
+        font-size: 70%;
+      }
+@supports (font-variation-settings: normal) {
+  html { font-family:
+    'Fira Code',
+          'Apple Color Emoji',
+          'Segoe UI Emoji',
+          'Segoe UI Symbol';
+          font-size: 85%;
+        }
+}
+
+code {
+  font-family:
+    'Fira Code',
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  font-size: 70%;
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nvidia on hbb&#39;s blog</title>
+    <link>/tags/nvidia/</link>
+    <description>Recent content in Nvidia on hbb&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 07 Feb 2024 00:00:00 +0800</lastBuildDate><atom:link href="/tags/nvidia/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ubuntu安装nvidia显卡驱动</title>
+      <link>/post/ubuntu%E5%AE%89%E8%A3%85nvidia%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8/</link>
+      <pubDate>Wed, 07 Feb 2024 00:00:00 +0800</pubDate>
+      
+      <guid>/post/ubuntu%E5%AE%89%E8%A3%85nvidia%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8/</guid>
+      <description>0. 大纲 查看显卡驱动 添加apt 仓库 自动检测安装(对于较新型号无效) 手动安装 1.查看显卡驱动 1 lscpi |grep -i vga 输出
+确认是NVIDIA 显卡后， 继续后面的步骤，如果不是，可以试试 3，不一定有效， 2和4就不需要执行了
+2. 添加apt 源 添加Ubuntu图形驱动仓库PPA。在终端输入以下命令：
+1 2 sudo add-apt-repository ppa:graphics-drivers/ppa sudo apt update 3. 自动检测安装（对较新型号无效） 1 sudo ubuntu-drivers autoinstall 如果没有自动安装，需要手动安装，执行第4步
+4. 手动安装 根据步骤1 查到的型号 1e04，到这里转换为具体的型号
+点击jump后
+查到NVIDIA 型号为 RTX 2080 Ti，再到英伟达官网下载页面下载
+下载后 用root 权限安装
+1 sudo NVIDIA-***.run --no-x-check --no-nouveau-check -s 安装完后重启一下
+1 reboot &amp;mdash;-end&amp;mdash;-</description>
+    </item>
+    
+  </channel>
+</rss>
